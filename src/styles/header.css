@@ -1,0 +1,10 @@
+.logo {
+    transition: .5s;
+    filter: brightness(60%);
+}
+
+.logo:hover {
+    filter: drop-shadow(0 0 2px white);
+    transform: rotate(2deg);
+    filter: brightness(100%);
+}
