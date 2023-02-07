@@ -7,6 +7,7 @@ import NYP from "../images/logos/NYP.png";
 import SP from "../images/logos/SP.png";
 import TP from "../images/logos/TP.png";
 import RP from "../images/logos/RP.png";
+import Grid from "../images/grid.svg";
 import '../styles/fog.css';
 
 function IndexPage() {
@@ -54,14 +55,21 @@ function IndexPage() {
         </div>
 
         {/* About */}
-        <div className="w-3/5 mx-auto h-full flex items-center justify-center flex-col text-white" id="about">
-            <h1 className="text-6xl font-bold tracking-widest mb-10">About</h1>
-            <span className="text-2xl tracking-widest text-center">
+        <div className="w-3/5 mx-auto h-full flex justify-center flex-col text-white" id="about">
+            <h1 className="text-2xl font-bold mb-10 font-mono typing">&gt;&gt; cat about.txt</h1>
+            <span className="text-xl tracking-widest">
                 Lag and Crash is an inter-polytechnic CTF targeted at Polytechnic,
                 Institute of Technical Education and Junior College students. The event is organised
                 between the Polytechnic Cybersecurity Interest Groups.
             </span>
-            <h1 className="text-6xl font-bold tracking-widest mb-10 mt-20">Team</h1>
+            <br />
+            <span className="text-xl tracking-widest">
+                The goal of this CTF competition is to provide a means of exposure for students
+                from the various Institutions of Higher Learning (IHL) to the field of
+                Cybersecurity, and give them a taste of the many different concepts
+                involved in this complex field.
+            </span>
+            <h1 className="text-2xl font-bold mb-10 font-mono typing2 mt-12">&gt;&gt; grep -rnw &quot;./&quot; -e &quot;Team&quot;</h1>
             <div className="flex space-x-12 items-center justify-center flex-wrap">
                 <a href="#"><img className="w-48 h-48" src={TP} alt="Temasek Polytechnic" /></a>
                 <a href="#"><img className="w-40 h-40" src={NYP} alt="Nanyang Polytechnic" /></a>
@@ -72,24 +80,8 @@ function IndexPage() {
         </div>
 
         {/* Sponsors */}
-        <div className="w-full mx-auto h-full flex items-center justify-center flex-col text-white" style={{ backgroundColor: '#281C02' }}>
+        <div className="w-full mx-auto h-full flex items-center justify-center flex-col text-white" style={{ backgroundImage: "url('/grid.svg')", WebkitMaskImage: 'radial-gradient(70% 80% at 50% 50%, black 40%, transparent 70%)' }}>
             <h1 className="text-6xl font-bold tracking-widest mb-10">Sponsors</h1>
-        </div>
-
-        <div class="wheel">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
-
-            <div class="cabin"></div>
-            <div class="cabin"></div>
-            <div class="cabin"></div>
-            <div class="cabin"></div>
-            <div class="cabin"></div>
-            <div class="cabin"></div>
         </div>
 
     </div>);

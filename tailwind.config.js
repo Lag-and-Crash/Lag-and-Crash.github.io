@@ -6,6 +6,9 @@ module.exports = {
     "./src/components/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    fontFamily: {
+      'mono': "JetBrains Mono"
+    },
     extend: {
       colors: {
         'highlight': '#00E0C7'
