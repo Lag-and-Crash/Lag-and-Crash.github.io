@@ -118,7 +118,7 @@ function IndexPage() {
                 <Header />
                 <div className="flex w-4/5 mx-auto h-5/6 md:h-full flex-col lg:flex-row mt-auto md:mt-0">
                     <div className="w-full xl:h-full flex items-center flex-col justify-center text-white mt-auto lg:mt-0">
-                        <h1 className="xl:text-5xl md:text-3xl text-xl font-bold xl:mb-12 md:mb-8 mb-4 leading-normal tracking-[0.4rem]">
+                        <h1 className="xl:text-5xl md:text-3xl text-xl font-bold xl:mb-12 pt-4 md:mb-8 mb-4 leading-normal tracking-[0.4rem]">
                             Which will crash first, your computer, or
                             <span className="text-highlight font-extrabold hero glitch layers" data-text="YOUth?"> YOUth?</span>
                         </h1>
