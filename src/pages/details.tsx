@@ -52,13 +52,13 @@ export default function Details() {
                     </tr>
                 </table>
                 <span className="w-full">* PEN-200: Penetration Testing with Kali Linux OSCP Certification (OffSec Certified Professional) is a certification offered by OffSec, with each costing around SGD$2000.</span>
-                <span className="w-full pt-4">* Only the TOP 10 teams at the end of Day 3 will be invited to partake the Prize Presentation physically.</span>
+                <span className="w-full pt-4">* Only the TOP 10 Teams at the end of Day 3 will be invited to partake the Prize Presentation physically.</span>
                 <h2 className="xl:text-3xl w-full md:text-xl text-lg font-bold md:my-8 my-4 leading-normal tracking-[0.1rem]">👥 Team Formation</h2>
                 <span className="w-full">
                     You can form a team of up to
                     <span className="underline mx-1.5">5 members.</span>
                     <br />
-                    Note: If you have less than 5 members, the Lag and Crash committee will find other teams/participants to complete a team of 4.
+                    Note: If you have less than 5 members, the Lag and Crash committee will find other teams/participants to complete a team of 5.
                 </span>
             </div>
         </div>
