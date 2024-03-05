@@ -12,7 +12,7 @@ export default function Header() {
                 <img src={Logo} alt="" className="px-10 logo cursor-pointer" />
             </a>
             <a href="#contacts" className="lg:block hidden flex-1 text-center hover:text-highlight">Contact</a>
-            <a href="https://forms.gle/6BQHv8zWjUVSeHYq8" className="lg:block hidden flex-1 text-center hover:text-highlight">Sign Up</a>
+            <a href="/details" className="lg:block hidden flex-1 text-center hover:text-highlight">Details</a>
         </div>
     );
 
