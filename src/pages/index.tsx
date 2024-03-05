@@ -174,7 +174,7 @@ function IndexPage() {
                     <Link href="https://www.instagram.com/nullsec.sig/"><img className="w-40 h-40 max-w-full" src={NP} alt="Ngee Ann Polytechnic" /></Link>
                 </div>
                 <div className="flex justify-center p-2">
-                    <Link href="https://www.instagram.com/dismgryphons/"><img className="w-40 h-40 max-w-full" src={SP} alt="Singapore Polytechnic" /></Link>
+                    <Link href="https://www.instagram.com/sp.gryphons/"><img className="w-40 h-40 max-w-full" src={SP} alt="Singapore Polytechnic" /></Link>
                 </div>
                 <div className="flex justify-center p-2">
                     <Link href="https://www.instagram.com/republicpoly.soi/"><img className="w-40 h-40 max-w-full" src={RP} alt="Republic Polytechnic" /></Link>
@@ -222,7 +222,7 @@ function IndexPage() {
                             <h1 className="text-lg font-bold tracking-widest text-sky-300 pt-24 mb-4 font-mono hover:text-white/75 cursor-pointer transition z-50">&lt;h1&gt;Visionary&lt;/h1&gt;</h1>
                             <div className="flex justify-center">
                                 <Link href="https://www.div0.sg/">
-                                    <a><img className="w-32 h-32 object-contain" src={Div0} alt="Div0" /></a>
+                                    <img className="w-32 h-32 object-contain" src={Div0} alt="Div0" />
                                 </Link>
                             </div>
                         </div>
@@ -231,8 +231,8 @@ function IndexPage() {
                         <div className="flex-1 text-center px-2">
                             <h1 className="text-lg font-bold tracking-widest text-sky-300 pt-24 mb-4 font-mono hover:text-white/75 cursor-pointer transition z-50">&lt;h1&gt;Platinum&lt;/h1&gt;</h1>
                             <div className="flex justify-center">
-                                <Link href="https://www.csa.gov.sg/">
-                                    <a><img className="w-40 h-40 object-contain" src={CSIT} alt="CSIT" /></a>
+                                <Link href="https://www.csit.gov.sg/">
+                                    <img className="w-40 h-40 object-contain" src={CSIT} alt="CSIT" />
                                 </Link>
                             </div>
                         </div>
@@ -242,21 +242,21 @@ function IndexPage() {
                     <h1 className="text-lg font-bold tracking-widest text-zinc-300 mb-10 font-mono w-full text-center hover:text-white/75 cursor-pointer transition z-50">&lt;h3&gt;Silver&lt;/h3&gt;</h1>
                     <div className="flex justify-center items-center flex-wrap gap-8 mb-10">
                         <Link href="https://www.csa.gov.sg/">
-                            <a><img className="w-40 h-40 object-contain" src={CSA} alt="CSA" /></a>
+                            <img className="w-40 h-40 object-contain" src={CSA} alt="CSA" />
                         </Link>
                         <Link href="https://www.dsta.gov.sg/">
-                            <a><img className="w-40 h-40 object-contain" src={DSTA} alt="DSTA" /></a>
+                            <img className="w-40 h-40 object-contain" src={DSTA} alt="DSTA" />
                         </Link>
                         <Link href="https://www.tech.gov.sg/">
-                            <a><img className="w-40 h-40 object-contain" src={GT} alt="GovTech" /></a>
+                            <img className="w-40 h-40 object-contain" src={GT} alt="GovTech" />
                         </Link>
                     </div>
 
                     {/* Bronze Tier */}
                     <h1 className="text-lg font-bold tracking-widest text-yellow-700 mb-10 font-mono w-full text-center hover:text-white/75 cursor-pointer transition z-50">&lt;h4&gt;Bronze&lt;/h4&gt;</h1>
                     <div className="flex justify-center items-center flex-wrap gap-8 mb-10">
-                        <Link href="https://www.tech.gov.sg/">
-                            <a><img className="w-40 h-40 object-contain" src={AISP} alt="AISP" /></a>
+                        <Link href="https://www.aisp.sg/">
+                            <img className="w-40 h-40 object-contain" src={AISP} alt="AISP" />
                         </Link>
                     </div>
 
@@ -264,14 +264,13 @@ function IndexPage() {
                     <h1 className="text-lg font-bold tracking-widest text-yellow-700 mb-10 font-mono w-full text-center hover:text-white/75 cursor-pointer transition z-50">&lt;h5&gt;In-Kind&lt;/h5&gt;</h1>
                     <div className="flex justify-center items-center flex-wrap gap-8 mb-10">
                         <Link href="https://www.cyberyouth.sg/">
-                            <a><img className="w-40 h-40 object-contain" src={CYS} alt="CYS" /></a>
+                            <img className="w-40 h-40 object-contain" src={CYS} alt="CYS" />
                         </Link>
                         <Link href="https://www.offsec.com/">
-                            <a><img className="w-40 h-40 object-contain" src={OS} alt="OffSec" /></a>
+                            <img className="w-40 h-40 object-contain" src={OS} alt="OffSec" />
                         </Link>
                     </div>
                 </div>
-
 
                 <h1 className="text-sm font-bold tracking-widest text-zinc-500 mb-10 font-mono w-full hover:text-white/75 cursor-pointer transition z-50">&#123;% endfor %&#125;</h1>
             </div>
