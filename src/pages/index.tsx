@@ -22,6 +22,7 @@ import Github from '../images/socials/github.png';
 import Discord from '../images/socials/discord.png';
 import Instagram from '../images/socials/instagram.png';
 import Youtube from '../images/socials/youtube.png';
+import LinkedIn from '../images/socials/linkedin.png';
 import '../styles/fog.css';
 
 const equalLoaderPermutation = [
@@ -292,24 +293,27 @@ function IndexPage() {
         {/* Contacts */}
         <div id="contacts" className="w-3/5 mx-auto py-20 flex items-center justify-center flex-col text-white relative">
             <div className="opacity-50 absolute top-0 bottom-0 left-0 right-0 z-0" style={{ backgroundImage: "url('/grid.svg')", WebkitMaskImage: 'radial-gradient(50% 50% at 50% 50%, black 40%, transparent 70%)' }} />
-            <h1 className="text-3xl font-bold mb-12 leading-normal tracking-[0.4rem]">Contact Us</h1>
-            <div className="flex flex-col lg:flex-row lg:space-x-24 space-y-8 lg:space-y-0 items-center justify-center flex-wrap w-full my-10 z-50">
-                <Link href="https://discord.gg/H6U6NykFRe">
-                    <img className="h-24" src={Discord} alt="Discord" />
-                </Link>
-                
-                <Link href="https://www.instagram.com/lagandcrash/">
-                    <img className="h-28" src={Instagram} alt="Instagram" />
-                </Link>
-
-                <Link href="https://www.youtube.com/@lagandcrash">
-                    <img className="h-28" src={Youtube} alt="Youtube" />
-                </Link>
-
-                <Link href="https://github.com/Lag-and-Crash">
-                    <img className="h-28" src={Github} alt="Github" />
-                </Link>
+            
+            <div className="flex flex-wrap justify-center items-center space-x-4 lg:space-x-8 my-10">
+                <a href="https://discord.gg/H6U6NykFRe" className="w-24 lg:w-32">
+                    <img className="h-auto mx-auto" src={Discord} alt="Discord" />
+                </a>
+                <a href="https://www.instagram.com/lagandcrash/" className="w-24 lg:w-32">
+                    <img className="h-auto mx-auto" src={Instagram} alt="Instagram" />
+                </a>
+                <a href="https://www.youtube.com/@lagandcrash" className="w-24 lg:w-32">
+                    <img className="h-auto mx-auto" src={Youtube} alt="Youtube" />
+                </a>
+                <a href="https://github.com/Lag-and-Crash" className="w-24 lg:w-32">
+                    <img className="h-auto mx-auto" src={Github} alt="Github" />
+                </a>
+                <a href="https://www.linkedin.com/company/lagandcrash/" className="w-24 lg:w-32">
+                    <img className="h-auto mx-auto" src={LinkedIn} alt="LinkedIn" />
+                </a>
             </div>
+
+
+
         </div>
         <h1 className="text-sm font-bold tracking-widest pb-10 font-mono w-full text-white/50 text-center transition z-50">
             Still not enough CTF action for you? Why not check out
