@@ -241,12 +241,14 @@ function IndexPage() {
                     {/* Silver Tier */}
                     <h1 className="text-lg font-bold tracking-widest text-zinc-300 mb-10 font-mono w-full text-center hover:text-white/75 cursor-pointer transition z-50">&lt;h3&gt;Silver&lt;/h3&gt;</h1>
                     <div className="flex justify-center items-center flex-wrap gap-8 mb-10">
-                        <Link href="https://www.csa.gov.sg/">
-                            <img className="w-40 h-40 object-contain" src={CSA} alt="CSA" />
-                        </Link>
                         <Link href="https://www.dsta.gov.sg/">
                             <img className="w-40 h-40 object-contain" src={DSTA} alt="DSTA" />
                         </Link>
+                        
+                        <Link href="https://www.csa.gov.sg/">
+                            <img className="w-40 h-40 object-contain" src={CSA} alt="CSA" />
+                        </Link>
+                        
                         <Link href="https://www.tech.gov.sg/">
                             <img className="w-40 h-40 object-contain" src={GT} alt="GovTech" />
                         </Link>
