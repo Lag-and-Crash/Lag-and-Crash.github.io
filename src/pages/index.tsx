@@ -9,8 +9,7 @@ import TP from '../images/logos/TP.png';
 import RP from '../images/logos/RP.png';
 
 import CSIT from '../images/sponsors/CSIT/CSIT.png'
-/* import Div0 from '../images/sponsors/Div0/div0.png'; */
-import Div0 from '../images/sponsors/div0.png';
+import Div0 from '../images/sponsors/Div0/div0.png';
 import CSA from '../images/sponsors/CSA/CSA.png';
 import DSTA from '../images/sponsors/DSTA/DSTA.png';
 import GT from '../images/sponsors/GOVTECH/GovTechSg.png';
