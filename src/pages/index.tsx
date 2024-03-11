@@ -222,7 +222,7 @@ function IndexPage() {
                             <h1 className="text-lg font-bold tracking-widest text-sky-300 pt-24 mb-4 font-mono hover:text-white/75 cursor-pointer transition z-50">&lt;h1&gt;Visionary&lt;/h1&gt;</h1>
                             <div className="flex justify-center">
                                 <Link href="https://www.div0.sg/">
-                                    <img className="w-32 h-32 object-contain" src={Div0} alt="Div0" />
+                                    <img className="max-w-[330px] h-[230px] object-contain" src={Div0} alt="Div0" />
                                 </Link>
                             </div>
                         </div>
@@ -232,7 +232,7 @@ function IndexPage() {
                             <h1 className="text-lg font-bold tracking-widest text-sky-300 pt-24 mb-4 font-mono hover:text-white/75 cursor-pointer transition z-50">&lt;h1&gt;Platinum&lt;/h1&gt;</h1>
                             <div className="flex justify-center">
                                 <Link href="https://www.csit.gov.sg/">
-                                    <img className="w-40 h-40 object-contain" src={CSIT} alt="CSIT" />
+                                    <img className="max-w-[330px] h-[230px] object-contain" src={CSIT} alt="CSIT" />
                                 </Link>
                             </div>
                         </div>
@@ -242,15 +242,15 @@ function IndexPage() {
                     <h1 className="text-lg font-bold tracking-widest text-zinc-300 mb-10 font-mono w-full text-center hover:text-white/75 cursor-pointer transition z-50">&lt;h3&gt;Silver&lt;/h3&gt;</h1>
                     <div className="flex justify-center items-center flex-wrap gap-8 mb-10">
                         <Link href="https://www.dsta.gov.sg/">
-                            <img className="w-40 h-40 object-contain" src={DSTA} alt="DSTA" />
+                            <img className="max-w-[330px] h-[230px] object-contain" src={DSTA} alt="DSTA" />
                         </Link>
                         
                         <Link href="https://www.csa.gov.sg/">
-                            <img className="w-40 h-40 object-contain" src={CSA} alt="CSA" />
+                            <img className="max-w-[330px] h-[230px] object-contain" src={CSA} alt="CSA" />
                         </Link>
                         
                         <Link href="https://www.tech.gov.sg/">
-                            <img className="w-40 h-40 object-contain" src={GT} alt="GovTech" />
+                            <img className="max-w-[330px] h-[230px] object-contain" src={GT} alt="GovTech" />
                         </Link>
                     </div>
 
@@ -258,7 +258,7 @@ function IndexPage() {
                     <h1 className="text-lg font-bold tracking-widest text-yellow-700 mb-10 font-mono w-full text-center hover:text-white/75 cursor-pointer transition z-50">&lt;h4&gt;Bronze&lt;/h4&gt;</h1>
                     <div className="flex justify-center items-center flex-wrap gap-8 mb-10">
                         <Link href="https://www.aisp.sg/">
-                            <img className="w-40 h-40 object-contain" src={AISP} alt="AISP" />
+                            <img className="max-w-[330px] h-[230px] object-contain" src={AISP} alt="AISP" />
                         </Link>
                     </div>
 
@@ -266,10 +266,10 @@ function IndexPage() {
                     <h1 className="text-lg font-bold tracking-widest text-yellow-700 mb-10 font-mono w-full text-center hover:text-white/75 cursor-pointer transition z-50">&lt;h5&gt;In-Kind&lt;/h5&gt;</h1>
                     <div className="flex justify-center items-center flex-wrap gap-8 mb-10">
                         <Link href="https://www.cyberyouth.sg/">
-                            <img className="w-40 h-40 object-contain" src={CYS} alt="CYS" />
+                            <img className="max-w-[330px] h-[230px] object-contain" src={CYS} alt="CYS" />
                         </Link>
                         <Link href="https://www.offsec.com/">
-                            <img className="w-40 h-40 object-contain" src={OS} alt="OffSec" />
+                            <img className="max-w-[330px] h-[230px] object-contain" src={OS} alt="OffSec" />
                         </Link>
                     </div>
                 </div>
