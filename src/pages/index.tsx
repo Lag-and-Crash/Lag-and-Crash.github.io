@@ -254,8 +254,8 @@ function IndexPage() {
                         </Link>
                     </div>
 
-                    {/* Bronze Tier */}
-                    <h1 className="text-lg font-bold tracking-widest text-yellow-700 mb-10 font-mono w-full text-center hover:text-white/75 cursor-pointer transition z-50">&lt;h4&gt;Bronze&lt;/h4&gt;</h1>
+                    {/* Supporting Association Tier */}
+                    <h1 className="text-lg font-bold tracking-widest text-yellow-700 mb-10 font-mono w-full text-center hover:text-white/75 cursor-pointer transition z-50">&lt;h4&gt;Supporting Association&lt;/h4&gt;</h1>
                     <div className="flex justify-center items-center flex-wrap gap-8 mb-10">
                         <Link href="https://www.aisp.sg/">
                             <img className="max-w-[330px] h-[230px] object-contain" src={AISP} alt="AISP" />
