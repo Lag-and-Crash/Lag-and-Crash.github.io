@@ -131,7 +131,7 @@ function IndexPage() {
                             <br />
                             What are you waiting for?  You&apos;re our only hope!
                         </span>
-                        <a href="https://forms.gle/6BQHv8zWjUVSeHYq8" className="bg-transparent border-highlight border-4 self-start px-6 py-3 font-bold text-2xl mt-10 rounded-lg text-white hover:text-black hover:bg-highlight transition-all">Sign up now!</a>
+                        <a href="https://forms.gle/AP2DmE2f6mqNPJJMA" className="bg-transparent border-highlight border-4 self-start px-6 py-3 font-bold text-2xl mt-10 rounded-lg text-white hover:text-black hover:bg-highlight transition-all">Sign up now!</a>
                     </div>
                     <img src={Hacker} className="lg:h-4/5 h-1/2 lg:self-end self-center" alt="Hacker" style={{ transform: 'scale(-1, 1)' }} />
                 </div>
@@ -216,61 +216,10 @@ function IndexPage() {
                 <h1 className="text-sm font-bold tracking-widest text-zinc-500 mb-10 font-mono w-full hover:text-white/75 cursor-pointer transition z-50">&#123;% for sponsor in sponsors %&#125;</h1>
 
                 <div className="container mx-auto px-4">
+                        <div className="flex flex-wrap justify-center items-center mb-10">
+                        To be revealed soon 👀
+                        </div>
                     <div className="flex flex-wrap justify-between items-start mb-10">
-                        {/* Visionary Tier */}
-                        <div className="flex-1 text-center px-2">
-                            <h1 className="text-lg font-bold tracking-widest text-sky-300 pt-24 mb-4 font-mono hover:text-white/75 cursor-pointer transition z-50">&lt;h1&gt;Visionary&lt;/h1&gt;</h1>
-                            <div className="flex justify-center">
-                                <Link href="https://www.div0.sg/">
-                                    <img className="max-w-[330px] h-[230px] object-contain" src={Div0} alt="Div0" />
-                                </Link>
-                            </div>
-                        </div>
-
-                        {/* Platinum Tier */}
-                        <div className="flex-1 text-center px-2">
-                            <h1 className="text-lg font-bold tracking-widest text-sky-300 pt-24 mb-4 font-mono hover:text-white/75 cursor-pointer transition z-50">&lt;h1&gt;Platinum&lt;/h1&gt;</h1>
-                            <div className="flex justify-center">
-                                <Link href="https://www.csit.gov.sg/">
-                                    <img className="max-w-[330px] h-[230px] object-contain" src={CSIT} alt="CSIT" />
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Silver Tier */}
-                    <h1 className="text-lg font-bold tracking-widest text-zinc-300 mb-10 font-mono w-full text-center hover:text-white/75 cursor-pointer transition z-50">&lt;h3&gt;Silver&lt;/h3&gt;</h1>
-                    <div className="flex justify-center items-center flex-wrap gap-8 mb-10">
-                        <Link href="https://www.dsta.gov.sg/">
-                            <img className="max-w-[330px] h-[230px] object-contain" src={DSTA} alt="DSTA" />
-                        </Link>
-                        
-                        <Link href="https://www.csa.gov.sg/">
-                            <img className="max-w-[330px] h-[230px] object-contain" src={CSA} alt="CSA" />
-                        </Link>
-                        
-                        <Link href="https://www.tech.gov.sg/">
-                            <img className="max-w-[330px] h-[230px] object-contain" src={GT} alt="GovTech" />
-                        </Link>
-                    </div>
-
-                    {/* Supporting Association Tier */}
-                    <h1 className="text-lg font-bold tracking-widest text-yellow-700 mb-10 font-mono w-full text-center hover:text-white/75 cursor-pointer transition z-50">&lt;h4&gt;Supporting Association&lt;/h4&gt;</h1>
-                    <div className="flex justify-center items-center flex-wrap gap-8 mb-10">
-                        <Link href="https://www.aisp.sg/">
-                            <img className="max-w-[330px] h-[230px] object-contain" src={AISP} alt="AISP" />
-                        </Link>
-                    </div>
-
-                    {/* In-Kind Tier */}
-                    <h1 className="text-lg font-bold tracking-widest text-yellow-700 mb-10 font-mono w-full text-center hover:text-white/75 cursor-pointer transition z-50">&lt;h5&gt;In-Kind&lt;/h5&gt;</h1>
-                    <div className="flex justify-center items-center flex-wrap gap-8 mb-10">
-                        <Link href="https://www.cyberyouth.sg/">
-                            <img className="max-w-[330px] h-[230px] object-contain" src={CYS} alt="CYS" />
-                        </Link>
-                        <Link href="https://www.offsec.com/">
-                            <img className="max-w-[330px] h-[230px] object-contain" src={OS} alt="OffSec" />
-                        </Link>
                     </div>
                 </div>
 
