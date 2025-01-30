@@ -39,7 +39,7 @@ export function Head() {
 
     return (<>
         <link rel="icon" type="image/x-icon" href="/logo.png" />
-        <title>Lag and Crash 2024</title>
+        <title>Lag and Crash 2025</title>
     </>);
 
 }
@@ -123,7 +123,7 @@ function IndexPage() {
                             <span className="text-highlight font-extrabold hero glitch layers" data-text="YOUth?"> YOUth?</span>
                         </h1>
                         <span className="xl:text-2xl md:text-lg text-sm tracking-widest">
-                            Join us in our upcoming 48 hour Capture-The-Flag as we band together
+                            Join us in our upcoming 50 hour Capture-The-Flag as we band together
                             as Earth&apos;s last group of revolutionaries to reclaim Cyberspace and
                             restore peace to our world. You are among the last remaining survivors,
                             Cyberspace is counting on you!
