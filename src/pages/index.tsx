@@ -289,7 +289,7 @@ function IndexPage() {
             {/* Visionary Tier */}
             <div className="flex flex-col items-center mb-10">
                 <h1 className="text-lg font-bold tracking-widest text-sky-300 mb-4 font-mono text-center hover:text-white/75 cursor-pointer transition z-50">
-                &lt;h1&gt;Visionary&lt;/h5&gt;
+                &lt;h5&gt;Visionary&lt;/h5&gt;
                 </h1>
                 <div className="flex justify-center">
                 <Link href="https://www.div0.sg/">
