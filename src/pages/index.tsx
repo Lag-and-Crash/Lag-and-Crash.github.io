@@ -12,6 +12,7 @@ import CSIT from '../images/sponsors/CSIT/CSIT.png'
 import Div0 from '../images/sponsors/Div0/div0.png';
 import CSA from '../images/sponsors/CSA/CSA.png';
 import DSTA from '../images/sponsors/DSTA/DSTA.png';
+import DIS from "../images/sponsors/DIS/DIS.png";
 import GT from '../images/sponsors/GOVTECH/GovTechSg.png';
 import AISP from '../images/sponsors/AISP/AiSP.png';
 import CYS from '../images/sponsors/CYS/CYS.png';
@@ -215,31 +216,121 @@ function IndexPage() {
                 <h1 className="text-sm font-bold tracking-widest text-zinc-500 font-mono w-full hover:text-white/75 cursor-pointer transition z-50">&lt;h1&gt;Made possible by the wonderful folks at:&lt;/h1&gt;</h1>
                 <h1 className="text-sm font-bold tracking-widest text-zinc-500 mb-10 font-mono w-full hover:text-white/75 cursor-pointer transition z-50">&#123;% for sponsor in sponsors %&#125;</h1>
 
-                <div className="container mx-auto px-4">
-                        <div className="flex flex-wrap justify-center items-center mb-10">
-                        To be revealed soon 👀
-                        </div>
-                    <div className="flex flex-wrap justify-between items-start mb-10">
-                    </div>
+            <div className="container mx-auto px-4">
+            {/* Platinum Tier */}
+            <div className="flex flex-col items-center mb-10">
+                <h1 className="text-lg font-bold tracking-widest text-sky-300 mb-4 font-mono text-center hover:text-white/75 cursor-pointer transition z-50">
+                &lt;h1&gt;Platinum&lt;/h1&gt;
+                </h1>
+                <div className="flex justify-center">
+                <Link href="https://www.csit.gov.sg/">
+                    <img
+                    className="max-w-[330px] h-[230px] object-contain"
+                    src={CSIT}
+                    alt="CSIT"
+                    />
+                </Link>
                 </div>
-
-                <h1 className="text-sm font-bold tracking-widest text-zinc-500 mb-10 font-mono w-full hover:text-white/75 cursor-pointer transition z-50">&#123;% endfor %&#125;</h1>
             </div>
+
+            {/* Gold Tier */}
+            <div className="flex flex-col items-center mb-10">
+                <h1 className="text-lg font-bold tracking-widest text-yellow-500 mb-4 font-mono text-center hover:text-white/75 cursor-pointer transition z-50">
+                &lt;h1&gt;Gold&lt;/h1&gt;
+                </h1>
+                <div className="flex justify-center gap-8">
+                <Link href="https://www.dsta.gov.sg/">
+                    <img
+                    className="max-w-[330px] h-[230px] object-contain"
+                    src={DSTA}
+                    alt="DSTA"
+                    />
+                </Link>
+                <Link href="https://www.dis.com/">
+                    <img
+                    className="max-w-[330px] h-[230px] object-contain"
+                    src={DIS}
+                    alt="DIS"
+                    />
+                </Link>
+                </div>
+            </div>
+
+            {/* Silver & Supporting Association Tier */}
+            <div className="flex flex-wrap justify-center gap-8 mb-10">
+                {/* Silver */}
+                <div className="flex flex-col items-center">
+                <h1 className="text-lg font-bold tracking-widest text-zinc-300 mb-4 font-mono text-center hover:text-white/75 cursor-pointer transition z-50">
+                    &lt;h3&gt;Silver&lt;/h3&gt;
+                </h1>
+                <Link href="https://www.csa.gov.sg/">
+                    <img
+                    className="max-w-[330px] h-[230px] object-contain"
+                    src={CSA}
+                    alt="CSA"
+                    />
+                </Link>
+                </div>
+                {/* Supporting Association */}
+                <div className="flex flex-col items-center">
+                <h1 className="text-lg font-bold tracking-widest text-yellow-700 mb-4 font-mono text-center hover:text-white/75 cursor-pointer transition z-50">
+                    &lt;h4&gt;Supporting Association&lt;/h4&gt;
+                </h1>
+                <Link href="https://www.aisp.sg/">
+                    <img
+                    className="max-w-[330px] h-[230px] object-contain"
+                    src={AISP}
+                    alt="AISP"
+                    />
+                </Link>
+                </div>
+            </div>
+
+            {/* Visionary Tier */}
+            <div className="flex flex-col items-center mb-10">
+                <h1 className="text-lg font-bold tracking-widest text-sky-300 mb-4 font-mono text-center hover:text-white/75 cursor-pointer transition z-50">
+                &lt;h1&gt;Visionary&lt;/h5&gt;
+                </h1>
+                <div className="flex justify-center">
+                <Link href="https://www.div0.sg/">
+                    <img
+                    className="max-w-[330px] h-[230px] object-contain"
+                    src={Div0}
+                    alt="Div0"
+                    />
+                </Link>
+                </div>
+            </div>
+
+            {/* In-Kind Tier */}
+            <div className="flex flex-col items-center mb-10">
+                <h1 className="text-lg font-bold tracking-widest text-yellow-700 mb-4 font-mono text-center hover:text-white/75 cursor-pointer transition z-50">
+                &lt;h5&gt;In-Kind&lt;/h5&gt;
+                </h1>
+                <div className="flex justify-center gap-8">
+                <Link href="https://www.cyberyouth.sg/">
+                    <img
+                    className="max-w-[330px] h-[230px] object-contain"
+                    src={CYS}
+                    alt="CYS"
+                    />
+                </Link>
+                <Link href="https://www.offsec.com/">
+                    <img
+                    className="max-w-[330px] h-[230px] object-contain"
+                    src={OS}
+                    alt="OffSec"
+                    />
+                </Link>
+                </div>
+            </div>
+            </div>
+
+            <h1 className="text-sm font-bold tracking-widest text-zinc-500 mb-10 font-mono w-full text-center hover:text-white/75 cursor-pointer transition z-50">
+            &#123;% endfor %&#125;
+            </h1>
         </div>
-
-        <div className="w-4/5 mx-auto flex items-center relative mb-8" style={{ height: 16, filter: 'drop-shadow(rgba(0, 224, 199, 0.6) -1px -1px 2px) drop-shadow(rgba(0, 224, 199, 0.6) 1px 1px 2px)' }}>
-            <div className="absolute flex justify-start space-x-3 left-0 top-0 w-1/5">
-                <div className="h-2 bg-highlight w-1/5 rounded-sm" />
-                <div className="h-2 bg-highlight w-1/5 rounded-sm" />
-                <div className="h-2 bg-highlight w-3/5 rounded-sm" />
-            </div>
-            <div className="w-1/2 bg-white self-end h-px" />
-            <div className="flex items-center h-full justify-center overflow-hidden" style={{ width: 16 }}>
-                <div className="h-px bg-white absolute -rotate-45" style={{ width: 22 }} />
-            </div>
-            <div className="w-1/2 bg-white self-start h-px" />
         </div>
-
         {/* Contacts */}
         <div id="contacts" className="w-3/5 mx-auto py-20 flex items-center justify-center flex-col text-white relative">
             <div className="opacity-50 absolute top-0 bottom-0 left-0 right-0 z-0" style={{ backgroundImage: "url('/grid.svg')", WebkitMaskImage: 'radial-gradient(50% 50% at 50% 50%, black 40%, transparent 70%)' }} />
