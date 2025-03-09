@@ -18,11 +18,9 @@ export default function Details() {
             <div className="flex items-center w-4/5 mx-auto flex-col justify-center text-white py-8">
                 <h1 className="xl:text-5xl w-full md:text-3xl text-xl font-bold xl:mb-12 md:mb-8 mb-4 leading-normal tracking-[0.4rem]">Details</h1>
                 <h2 className="xl:text-3xl w-full md:text-xl text-lg font-bold md:my-8 my-4 leading-normal tracking-[0.1rem]">🏆 Prizes</h2>
-                <span className="w-full">To be revealed 👀</span>
-                {/* <span className="w-full font-mono">1st Prize: SGD$ Cash </span> */}
-                {/* <span className="w-full font-mono">2nd Prize: SGD$ Cash </span> */}
-                {/* <span className="w-full font-mono">3rd Prize: SGD$ Cash </span> */}
-
+                <span className="w-full font-mono">1st Prize: SGD$2000 Cash + OffSec Vouchers + Merch </span>
+                <span className="w-full font-mono">2nd Prize: SGD$1000 Cash + Vouchers (Worth $400) + Merch</span>
+                <span className="w-full font-mono">3rd Prize: SGD$500 Cash + Vouchers (Worth $200) + Merch </span>
                 <h2 className="xl:text-3xl w-full md:text-xl text-lg font-bold md:my-8 my-4 leading-normal tracking-[0.1rem]">📅 Dates</h2>
                 <span className="w-full">Lag and Crash 2025 will be happening on the following dates:</span>
                 <table className="w-full border my-8 border-collapse">
