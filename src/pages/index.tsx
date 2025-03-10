@@ -236,7 +236,7 @@ function IndexPage() {
             {/* Gold Tier */}
             <div className="flex flex-col items-center mb-10">
                 <h1 className="text-lg font-bold tracking-widest text-yellow-500 mb-4 font-mono text-center hover:text-white/75 cursor-pointer transition z-50">
-                &lt;h1&gt;Gold&lt;/h1&gt;
+                &lt;h2&gt;Gold&lt;/h2&gt;
                 </h1>
                 <div className="flex justify-center gap-8">
                 <Link href="https://www.dsta.gov.sg/">
