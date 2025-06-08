@@ -4,7 +4,6 @@ import Hacker from '../images/hacker.png';
 import Arrow from '../images/arrow.png';
 import NP from '../images/logos/NP.png';
 import NYP from '../images/logos/NYP.png';
-import SP from '../images/logos/SP.png';
 import TP from '../images/logos/TP.png';
 import RP from '../images/logos/RP.png';
 

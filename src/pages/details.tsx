@@ -30,23 +30,23 @@ export default function Details() {
                         <th className="p-4 border">Venue</th>
                     </tr>
                     <tr>
-                        <td className="p-4 border">21st March 2025</td>
+                        <td className="p-4 border">11th July 2025</td>
                         <td className="p-4 border">Friday</td>
                         <td className="p-4 border">Virtual</td>
                     </tr>
                     <tr>
-                        <td className="p-4 border">22nd March 2025</td>
+                        <td className="p-4 border">12th July 2025</td>
                         <td className="p-4 border">Saturday</td>
                         <td className="p-4 border">Virtual</td>
                     </tr>
                     <tr>
-                        <td className="p-4 border">23rd March 2025</td>
+                        <td className="p-4 border">13th July 2025</td>
                         <td className="p-4 border">Sunday</td>
                         <td className="p-4 border">Virtual</td>
                     </tr>
                     <tr>
-                        <td className="p-4 border">29th March 2025</td>
-                        <td className="p-4 border">Saturday</td>
+                        <td className="p-4 border">20th July 2025</td>
+                        <td className="p-4 border">Sunday</td>
                         <td className="p-4 border">Physical*</td>
                     </tr>
                 </table>
@@ -59,7 +59,7 @@ export default function Details() {
                     <br />
                     Note: If you have less than 4 members, you may look for a team in the #👷team-formation channel on our Discord server.
                     <br />
-                    ❗️ Only full teams of 4 members will be eligible for prizes.
+                   ❗️ Only full teams of 4 members will be eligible for prizes.
                 </span>
             </div>
         </div>
