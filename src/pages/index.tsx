@@ -174,10 +174,7 @@ function IndexPage() {
                     <Link href="https://www.instagram.com/nullsec.sig/"><img className="w-40 h-40 max-w-full" src={NP} alt="Ngee Ann Polytechnic" /></Link>
                 </div>
                 <div className="flex justify-center p-2">
-                    <Link href="https://www.instagram.com/sp.gryphons/"><img className="w-40 h-40 max-w-full" src={SP} alt="Singapore Polytechnic" /></Link>
-                </div>
-                <div className="flex justify-center p-2">
-                    <Link href="https://www.instagram.com/republicpoly.soi/"><img className="w-40 h-40 max-w-full" src={RP} alt="Republic Polytechnic" /></Link>
+                    <Link href="https://www.instagram.com/rp.hextech/"><img className="w-40 h-40 max-w-full" src={RP} alt="Republic Polytechnic" /></Link>
                 </div>
             </div>
 
