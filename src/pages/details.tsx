@@ -45,8 +45,8 @@ export default function Details() {
                         <td className="p-4 border">Virtual</td>
                     </tr>
                     <tr>
-                        <td className="p-4 border">20th July 2025</td>
-                        <td className="p-4 border">Sunday</td>
+                        <td className="p-4 border">19th July 2025</td>
+                        <td className="p-4 border">Saturday</td>
                         <td className="p-4 border">Physical*</td>
                     </tr>
                 </table>
