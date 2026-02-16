@@ -1,72 +1,91 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import TerminalBlock, { createTerminalLines } from '../components/TerminalBlock';
 import '../styles/nebula.css';
 
-export function Head() {
-    return (
-        <>
-            <link rel="icon" type="image/x-icon" href="/logo.png" />
-            <title>Details - Lag and Crash 6.0</title>
-        </>
-    );
-}
+function DetailsPage() {
 
-export default function Details() {
-
-    const qualifiersLines = createTerminalLines([
+    const qualifiersTerminalLines = createTerminalLines([
         { type: 'command', content: 'cat qualifiers.txt' },
         { type: 'empty' },
-        { type: 'output', content: '📅 Date: 16 March (12:00 PM) – 17 March (6:00 PM)' },
-        { type: 'output', content: '⏱️  Duration: 30 Hours' },
-        { type: 'output', content: '🌐 Venue: Online' },
-        { type: 'output', content: '🎯 Format: Jeopardy-style CTF' },
+        { type: 'output', content: 'Format: 30-hour Online Jeopardy CTF' },
+        { type: 'output', content: 'Date: March 16-17, 2026' },
+        { type: 'output', content: 'Time: TBA' },
         { type: 'empty' },
-        { type: 'output', content: 'Open to ALL students!' },
-        { type: 'output', content: 'Solve challenges, capture flags, earn points.' },
-        { type: 'output', content: '⚠️  Only top 10 teams advance to finals!' },
+        { type: 'output', content: 'Categories: Web, Crypto, Reverse Engineering,' },
+        { type: 'output', content: 'Forensics, OSINT, PWN, and more!' },
+        { type: 'empty' },
+        { type: 'output', content: 'Top 10 teams advance to Finals' },
     ]);
 
-    const finalsLines = createTerminalLines([
+    const finalsTerminalLines = createTerminalLines([
         { type: 'command', content: 'cat finals.txt' },
         { type: 'empty' },
-        { type: 'output', content: '📅 Date: 21 March 2026' },
-        { type: 'output', content: '⏱️  Time: 9:00 AM – 5:00 PM' },
-        { type: 'output', content: '📍 Venue: SIT (Singapore Institute of Technology)' },
-        { type: 'output', content: '🎯 Format: King of the Hill (Attack/Defense)' },
+        { type: 'output', content: 'Format: King of the Hill (Physical)' },
+        { type: 'output', content: 'Date: March 21, 2026' },
+        { type: 'output', content: 'Location: Singapore Institute of Technology (SIT)' },
         { type: 'empty' },
-        { type: 'output', content: '⚠️  Attendance is compulsory for all finalists!' },
+        { type: 'output', content: 'Only top 10 teams from Qualifiers compete.' },
+        { type: 'output', content: 'Bring your A-game for the ultimate showdown!' },
     ]);
 
-    const eligibilityLines = createTerminalLines([
+    const eligibilityTerminalLines = createTerminalLines([
         { type: 'command', content: 'cat eligibility.txt' },
         { type: 'empty' },
         { type: 'output', content: '• Jeopardy CTF: Open to all teams' },
         { type: 'output', content: '• Finals & Prizes: Pre-University teams only' },
         { type: 'output', content: '  (Secondary School, JC, Polytechnic)' },
         { type: 'output', content: '• Location: Teams must be Singapore-based' },
+        { type: 'empty' },
+        { type: 'output', content: 'Note: Anyone can participate in the online phase,' },
+        { type: 'output', content: 'but only eligible teams qualify for finals & prizes.' },
     ]);
 
-    const teamFormationLines = createTerminalLines([
-        { type: 'command', content: 'cat team_formation.txt' },
+    const teamTerminalLines = createTerminalLines([
+        { type: 'command', content: 'cat team_rules.txt' },
         { type: 'empty' },
-        { type: 'output', content: 'Team size: Up to 4 members' },
+        { type: 'output', content: 'Team Size: 1-4 members' },
+        { type: 'output', content: 'Registration: Per team (not individual)' },
         { type: 'empty' },
-        { type: 'output', content: 'Note: If you have less than 4 members, join the' },
-        { type: 'output', content: '#👷team-formation channel on our Discord server.' },
-        { type: 'empty' },
-        { type: 'output', content: '⚠️  Only full teams of 4 members eligible for prizes' },
+        { type: 'output', content: 'Each team member must:' },
+        { type: 'output', content: '• Have their own CTFd account' },
+        { type: 'output', content: '• Be part of the same team on the platform' },
+        { type: 'output', content: '• Comply with competition rules' },
     ]);
 
-    const prizesLines = createTerminalLines([
+    const prizesTerminalLines = createTerminalLines([
         { type: 'command', content: 'cat prizes.txt' },
         { type: 'empty' },
-        { type: 'output', content: 'Prizes: TBC' },
-        { type: 'output', content: 'Details will be announced soon!' },
+        { type: 'output', content: 'Prizes for Pre-University teams (Finals):' },
+        { type: 'empty' },
+        { type: 'output', content: '🥇 1st Place: TBA' },
+        { type: 'output', content: '🥈 2nd Place: TBA' },
+        { type: 'output', content: '🥉 3rd Place: TBA' },
+        { type: 'empty' },
+        { type: 'output', content: 'Additional prizes and swag for participants!' },
+        { type: 'output', content: 'Details will be announced soon.' },
+    ]);
+
+    const questionsTerminalLines = createTerminalLines([
+        { type: 'command', content: 'cat contact.txt' },
+        { type: 'empty' },
+        { type: 'output', content: 'Got questions? Reach out to us!' },
+        { type: 'empty' },
+        { type: 'output', content: 'Discord: https://discord.gg/H6U6NykFRe' },
+        { type: 'output', content: 'Instagram: @lagandcrash' },
+        { type: 'output', content: 'Email: interpoly@lagncra.sh' },
     ]);
 
     return (
         <div className="w-full min-h-screen bg-cosmic-base">
+            <Helmet>
+                <title>Event Details - Lag and Crash 6.0</title>
+                <link rel="icon" type="image/x-icon" href="/logo.png" />
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+                <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+            </Helmet>
             {/* Nebula Background System (Optimized: 2 layers) */}
             <div className="nebula-container">
                 <div id="nebula_layer_01" />
@@ -90,72 +109,79 @@ export default function Details() {
             <div className="cosmic-frame-bl" />
             <div className="cosmic-frame-br" />
 
-            {/* Content Layer */}
+            {/* Main content */}
             <div className="content-layer">
                 <Header />
 
-                <div className="max-w-6xl mx-auto px-4 md:px-8 pt-32 pb-20">
-                    {/* Page Title */}
+                {/* Page Header */}
+                <div className="max-w-5xl mx-auto px-4 md:px-8 pt-32 pb-12">
                     <h1 
-                        className="text-4xl md:text-5xl font-bold mb-16 tracking-wide text-center"
+                        className="text-4xl md:text-5xl font-bold text-center mb-4 tracking-wide"
                         style={{
-                            background: 'linear-gradient(135deg, #60A5FA 0%, #E5E7EB 100%)',
+                            background: 'linear-gradient(135deg, #60A5FA 0%, #E5E7EB 50%, #F87171 100%)',
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent',
-                            backgroundClip: 'text',
+                            backgroundClip: 'text'
                         }}
                     >
                         Event Details
                     </h1>
+                    <p className="text-center text-cosmic-text-secondary text-lg">
+                        Everything you need to know about Lag & Crash 6.0
+                    </p>
+                </div>
 
-                    <div className="space-y-16">
-                        {/* Qualifiers Section */}
-                        <div className="space-y-4">
-                            <h2 className="text-2xl md:text-3xl font-bold text-cosmic-text-primary tracking-wide flex items-center gap-3">
-                                <span className="text-cosmic-blue-light">🔍</span>
-                                Qualifiers — Online Jeopardy CTF
-                            </h2>
-                            <TerminalBlock lines={qualifiersLines} variant="blue" />
-                        </div>
+                {/* Details Sections */}
+                <div className="max-w-5xl mx-auto px-4 md:px-8 space-y-12 pb-20">
+                    
+                    {/* Qualifiers Section */}
+                    <section>
+                        <h2 className="text-2xl md:text-3xl font-bold text-cosmic-text-primary mb-6 tracking-wide flex items-center gap-3">
+                            <span className="text-cosmic-blue-light">🎯</span>
+                            Qualifiers (Online)
+                        </h2>
+                        <TerminalBlock lines={qualifiersTerminalLines} variant="blue" />
+                    </section>
 
-                        {/* Finals Section */}
-                        <div className="space-y-4">
-                            <h2 className="text-2xl md:text-3xl font-bold text-cosmic-text-primary tracking-wide flex items-center gap-3">
-                                <span className="text-cosmic-red-light">🛡️</span>
-                                Finals — King of the Hill
-                            </h2>
-                            <TerminalBlock lines={finalsLines} variant="red" />
-                        </div>
+                    {/* Finals Section */}
+                    <section>
+                        <h2 className="text-2xl md:text-3xl font-bold text-cosmic-text-primary mb-6 tracking-wide flex items-center gap-3">
+                            <span className="text-cosmic-red-light">👑</span>
+                            Finals (Physical)
+                        </h2>
+                        <TerminalBlock lines={finalsTerminalLines} variant="red" />
+                    </section>
 
-                        {/* Eligibility Section */}
-                        <div className="space-y-4">
-                            <h2 className="text-2xl md:text-3xl font-bold text-cosmic-text-primary tracking-wide flex items-center gap-3">
-                                <span className="text-cosmic-blue-light">🎓</span>
-                                Eligibility
-                            </h2>
-                            <TerminalBlock lines={eligibilityLines} variant="blue" />
-                        </div>
+                    {/* Eligibility Section */}
+                    <section>
+                        <h2 className="text-2xl md:text-3xl font-bold text-cosmic-text-primary mb-6 tracking-wide flex items-center gap-3">
+                            <span className="text-cosmic-blue-light">✅</span>
+                            Eligibility
+                        </h2>
+                        <TerminalBlock lines={eligibilityTerminalLines} variant="blue" />
+                    </section>
 
-                        {/* Team Formation Section */}
-                        <div className="space-y-4">
-                            <h2 className="text-2xl md:text-3xl font-bold text-cosmic-text-primary tracking-wide flex items-center gap-3">
-                                <span className="text-cosmic-text-secondary">👥</span>
-                                Team Formation
-                            </h2>
-                            <TerminalBlock lines={teamFormationLines} variant="neutral" />
-                        </div>
+                    {/* Team Rules Section */}
+                    <section>
+                        <h2 className="text-2xl md:text-3xl font-bold text-cosmic-text-primary mb-6 tracking-wide flex items-center gap-3">
+                            <span className="text-cosmic-text-secondary">👥</span>
+                            Team Information
+                        </h2>
+                        <TerminalBlock lines={teamTerminalLines} variant="neutral" />
+                    </section>
 
-                        {/* Prizes Section */}
-                        <div className="space-y-4">
-                            <h2 className="text-2xl md:text-3xl font-bold text-cosmic-text-primary tracking-wide flex items-center gap-3">
-                                <span className="text-yellow-500/80">🏆</span>
-                                Prizes
-                            </h2>
-                            <TerminalBlock lines={prizesLines} variant="neutral" />
-                        </div>
+                    {/* Prizes Section */}
+                    <section>
+                        <h2 className="text-2xl md:text-3xl font-bold text-cosmic-text-primary mb-6 tracking-wide flex items-center gap-3">
+                            <span className="text-cosmic-red-light">🏆</span>
+                            Prizes
+                        </h2>
+                        <TerminalBlock lines={prizesTerminalLines} variant="red" />
+                    </section>
 
-                        {/* Registration Section */}
-                        <div className="space-y-6 pt-8">
+                    {/* Registration Section */}
+                    <section>
+                        <div className="space-y-6">
                             <h2 className="text-2xl md:text-3xl font-bold text-cosmic-text-primary tracking-wide flex items-center gap-3">
                                 <span className="text-cosmic-blue-light">📝</span>
                                 Registration
@@ -164,7 +190,7 @@ export default function Details() {
                             <div className="bg-cosmic-panel/40 border border-cosmic-blue-light/25 rounded-lg p-8 text-center" style={{ boxShadow: '0 0 15px rgba(96, 165, 250, 0.12), inset 0 0 18px rgba(96, 165, 250, 0.04)' }}>
                                 <p className="text-cosmic-text-primary text-xl md:text-2xl font-semibold mb-4">
                                     Registration closes:{' '}
-                                    <span className="text-cosmic-red-light">12th March 2026</span>
+                                    <span className="text-cosmic-red-light">March 12, 2026</span>
                                 </p>
                                 
                                 <div className="pt-6">
@@ -173,7 +199,7 @@ export default function Details() {
                                         className="inline-block group relative"
                                     >
                                         <div className="absolute inset-0 bg-gradient-to-r from-cosmic-blue-mid to-cosmic-red-mid opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg blur-xl" />
-                                        <div className="relative bg-cosmic-panel border-l-2 border-cosmic-blue-light border-r-2 border-cosmic-red-light px-10 py-5 rounded-lg transition-all duration-300 group-hover:shadow-glow-blue">
+                                        <div className="relative bg-cosmic-panel border-l-2 border-cosmic-blue-light border-r-2 border-cosmic-red-light px-10 py-5 rounded-lg transition-all duration-300">
                                             <span className="text-cosmic-text-primary font-bold text-xl tracking-wide">
                                                 Register Now!
                                             </span>
@@ -182,42 +208,19 @@ export default function Details() {
                                 </div>
                             </div>
                         </div>
+                    </section>
 
-                        {/* Questions Section */}
+                    {/* Questions Section */}
+                    <section>
                         <div className="space-y-6">
                             <h2 className="text-2xl md:text-3xl font-bold text-cosmic-text-primary tracking-wide flex items-center gap-3">
                                 <span className="text-cosmic-text-secondary">📩</span>
                                 Questions?
                             </h2>
                             
-                            <div className="bg-cosmic-panel/30 border border-cosmic-text-muted/20 rounded-lg p-8 shadow-depth">
-                                <p className="text-cosmic-text-secondary text-lg mb-6">
-                                    Drop us a message on Instagram or Discord!
-                                </p>
-                                
-                                <div className="space-y-3 text-cosmic-text-primary">
-                                    <p className="font-mono">
-                                        <span className="text-cosmic-text-muted">Discord:</span>{' '}
-                                        <a 
-                                            href="https://discord.gg/H6U6NykFRe" 
-                                            className="text-cosmic-blue-light hover:text-cosmic-red-light transition-colors duration-300 underline"
-                                        >
-                                            Join our Discord
-                                        </a>
-                                    </p>
-                                    <p className="font-mono">
-                                        <span className="text-cosmic-text-muted">Email:</span>{' '}
-                                        <a 
-                                            href="mailto:interpoly@lagncra.sh" 
-                                            className="text-cosmic-blue-light hover:text-cosmic-red-light transition-colors duration-300 underline"
-                                        >
-                                            interpoly@lagncra.sh
-                                        </a>
-                                    </p>
-                                </div>
-                            </div>
+                            <TerminalBlock lines={questionsTerminalLines} variant="neutral" />
                         </div>
-                    </div>
+                    </section>
                 </div>
 
                 {/* Footer Spacing */}
@@ -226,3 +229,5 @@ export default function Details() {
         </div>
     );
 }
+
+export default DetailsPage;

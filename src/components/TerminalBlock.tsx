@@ -52,9 +52,9 @@ const TerminalBlock = React.memo(function TerminalBlock({
             <div className={`absolute left-0 top-0 bottom-0 w-1 ${gutterColorClass}`} />
             
             {/* Terminal content */}
-            <div className="p-4 pl-6 font-mono text-sm md:text-base">
+            <div className="p-5 pl-7 text-base md:text-lg" style={{ fontFamily: "'JetBrains Mono', 'Fira Code', 'Consolas', monospace" }}>
                 {lines.map((line, index) => (
-                    <div key={index} className="leading-relaxed">
+                    <div key={index} className="leading-loose">
                         {line.type === 'command' && (
                             <div className="text-cosmic-text-muted">
                                 <span className="text-cosmic-blue-light mr-2">$</span>

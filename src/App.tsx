@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
-import Header from '../components/Header';
-import TerminalBlock, { createTerminalLines } from '../components/TerminalBlock';
-import '../styles/nebula.css';
+import Header from './components/Header';
+import TerminalBlock, { createTerminalLines } from './components/TerminalBlock';
 
 function Link({ href, children }: { href: string; children: React.ReactNode | React.ReactNode[] }) {
     return <a href={href} target="_blank" rel="noreferrer">{children}</a>;
 }
 
-function IndexPage() {
+function App() {
 
     const [hasPlayed, setPlayed] = useState(false);
     const [sponsorsVisible, setSponsorsVisible] = useState(false);
@@ -54,20 +52,12 @@ function IndexPage() {
         { type: 'command', content: 'cat eligibility.txt' },
         { type: 'empty' },
         { type: 'output', content: '• Jeopardy CTF: Open to all teams' },
-        { type: 'output', content: '• Finals & Prizes: Pre-University teams only' },
-        { type: 'output', content: '  (Secondary School, JC, Polytechnic)' },
+        { type: 'output', content: '• Finals & Prizes: Pre-University teams only (Secondary School, JC, ITE, Polytechnic)' },
         { type: 'output', content: '• Location: Teams must be Singapore-based' },
     ]);
 
     return (
         <div className="w-full min-h-screen bg-cosmic-base">
-            <Helmet>
-                <title>Lag and Crash 6.0</title>
-                <link rel="icon" type="image/x-icon" href="/logo.png" />
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-                <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
-            </Helmet>
             {/* Nebula Background System (Optimized: 2 layers) */}
             <div className="nebula-container">
                 <div id="nebula_layer_01" />
@@ -96,13 +86,13 @@ function IndexPage() {
                 <Header />
 
                 {/* Hero Section */}
-                <div className="min-h-screen flex items-center justify-center px-4 md:px-8 pt-32 pb-8">
-                    <div className="max-w-7xl w-full mx-auto grid lg:grid-cols-[3fr,2fr] gap-12 lg:gap-16 items-top">
+                <div className="min-h-screen flex items-center justify-center px-4 md:px-8 pt-24 pb-16">
+                    <div className="max-w-7xl w-full mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-top">
                         {/* Left: Hero Content */}
-                        <div className="space-y-4 animate-fadeIn">
+                        <div className="space-y-8 animate-fadeIn mt-5">
                             {/* Main Headline */}
                             <h1 
-                                className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight tracking-wide"
+                                className="text-4xl md:text-5xl xl:text-6xl font-bold leading-tight tracking-wide"
                                 style={{
                                     background: 'linear-gradient(135deg, #60A5FA 0%, #E5E7EB 100%)',
                                     WebkitBackgroundClip: 'text',
@@ -120,22 +110,22 @@ function IndexPage() {
                             <TerminalBlock lines={bootTerminalLines} showCursor variant="blue" />
 
                             {/* Description */}
-                            <p className="text-cosmic-text-secondary text-base md:text-lg leading-relaxed">
+                            <p className="text-cosmic-text-secondary text-lg md:text-xl leading-relaxed">
                                 Lag and Crash is back for its <span className="text-cosmic-blue-light font-semibold">sixth edition</span>. 
                                 Whether you're new to cybersecurity or an experienced flag hunter, this is your chance to learn, 
                                 compete, and prove your skills.
                             </p>
 
-                            <p className="text-cosmic-text-secondary text-sm md:text-base leading-relaxed">
+                            <p className="text-cosmic-text-secondary text-base md:text-lg leading-relaxed">
                                 Join us for a <span className="text-cosmic-text-primary font-semibold">30-hour online Jeopardy CTF</span> (March 16-17), 
                                 with <span className="text-cosmic-red-light font-semibold">top 10 teams</span> advancing to the{' '}
                                 <span className="text-cosmic-red-light font-semibold">King of the Hill</span> finals at SIT on March 21.
                             </p>
 
                             {/* CTA Button */}
-                            <div className="pt-2">
+                            <div className="pt-4">
                                 <a 
-                                    href="https://forms.gle/6N6hvu5ujPp3TvLc9"
+                                    href="https://forms.gle/AP2DmE2f6mqNPJJMA"
                                     className="inline-block group relative"
                                 >
                                     <div className="absolute inset-0 bg-gradient-to-r from-cosmic-blue-mid to-cosmic-red-mid opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg blur-xl" />
@@ -178,9 +168,7 @@ function IndexPage() {
                                     alt="Hacker silhouette"
                                     style={{ 
                                         transform: 'scale(-1, 1)',
-                                        filter: 'drop-shadow(0 0 40px rgba(96, 165, 250, 0.2)) drop-shadow(0 0 60px rgba(248, 113, 113, 0.15))',
-                                        maskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)',
-                                        WebkitMaskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)'
+                                        filter: 'drop-shadow(0 0 40px rgba(96, 165, 250, 0.2)) drop-shadow(0 0 60px rgba(248, 113, 113, 0.15))'
                                     }} 
                                 />
                             </div>
@@ -220,8 +208,8 @@ function IndexPage() {
                             Organised by Polytechnic Cybersecurity Interest Groups
                         </h2>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
-                            <Link href="https://www.instagram.com/sp.gryphons/">
-                                <img className="w-32 h-32 object-contain hover:scale-110 transition-transform duration-300" src="/images/logos/SP.png" alt="Singapore Polytechnic" />
+                            <Link href="https://www.instagram.com/tp_cyber/">
+                                <img className="w-32 h-32 object-contain hover:scale-110 transition-transform duration-300" src="/images/logos/TP.png" alt="Temasek Polytechnic" />
                             </Link>
                             <Link href="https://www.instagram.com/nyp_infosec/">
                                 <img className="w-32 h-28 object-contain hover:scale-110 transition-transform duration-300" src="/images/logos/NYP.png" alt="Nanyang Polytechnic" />
@@ -232,6 +220,109 @@ function IndexPage() {
                             <Link href="https://www.instagram.com/rp.hextech/">
                                 <img className="w-32 h-32 object-contain hover:scale-110 transition-transform duration-300" src="/images/logos/RP.png" alt="Republic Polytechnic" />
                             </Link>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Sponsors Section */}
+                <div id="sponsors-section" className="max-w-6xl mx-auto px-4 md:px-8 py-20">
+                    <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-cosmic-text-primary tracking-wide">
+                        Made Possible By
+                    </h2>
+
+                    <div className={`space-y-16 transition-opacity duration-1000 ${sponsorsVisible ? 'opacity-100' : 'opacity-0'}`}>
+                        {/* Platinum Tier */}
+                        <div className="space-y-6">
+                            <h3 className="text-xl font-mono text-cosmic-blue-light text-center tracking-wider">
+                                — PLATINUM —
+                            </h3>
+                            <div className="flex justify-center">
+                                <div className="bg-cosmic-panel/40 border border-cosmic-blue-light/25 rounded-lg p-8 hover:border-cosmic-blue-light/40 transition-colors duration-500" style={{ boxShadow: '0 0 20px rgba(96, 165, 250, 0.15), inset 0 0 20px rgba(96, 165, 250, 0.05)' }}>
+                                    <Link href="https://www.csit.gov.sg/">
+                                        <img className="max-w-[330px] h-[230px] object-contain" src="/images/sponsors/CSIT/CSIT.png" alt="CSIT" />
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Gold Tier */}
+                        <div className="space-y-6">
+                            <h3 className="text-xl font-mono text-yellow-500/80 text-center tracking-wider">
+                                — GOLD —
+                            </h3>
+                            <div className="flex flex-wrap justify-center gap-8">
+                                <div className="bg-cosmic-panel/40 border border-cosmic-blue-light/20 rounded-lg p-8 hover:border-cosmic-blue-light/35 transition-colors duration-500" style={{ boxShadow: '0 0 15px rgba(96, 165, 250, 0.12), inset 0 0 18px rgba(96, 165, 250, 0.04)' }}>
+                                    <Link href="https://www.dsta.gov.sg/">
+                                        <img className="max-w-[300px] h-[200px] object-contain" src="/images/sponsors/DSTA/DSTA.png" alt="DSTA" />
+                                    </Link>
+                                </div>
+                                <div className="bg-cosmic-panel/40 border border-cosmic-blue-light/20 rounded-lg p-8 hover:border-cosmic-blue-light/35 transition-colors duration-500" style={{ boxShadow: '0 0 15px rgba(96, 165, 250, 0.12), inset 0 0 18px rgba(96, 165, 250, 0.04)' }}>
+                                    <Link href="https://www.dis.com/">
+                                        <img className="max-w-[300px] h-[200px] object-contain" src="/images/sponsors/DIS/DIS.png" alt="DIS" />
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Silver & Supporting Association */}
+                        <div className="grid md:grid-cols-2 gap-12">
+                            <div className="space-y-6">
+                                <h3 className="text-xl font-mono text-zinc-400 text-center tracking-wider">
+                                    — SILVER —
+                                </h3>
+                                <div className="flex justify-center">
+                                    <div className="bg-cosmic-panel/40 border border-cosmic-text-muted/20 rounded-lg p-8 shadow-depth hover:border-cosmic-blue-light/30 transition-all duration-500">
+                                        <Link href="https://www.csa.gov.sg/">
+                                            <img className="max-w-[280px] h-[180px] object-contain" src="/images/sponsors/CSA/CSA.png" alt="CSA" />
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="space-y-6">
+                                <h3 className="text-xl font-mono text-cosmic-text-muted text-center tracking-wider">
+                                    — SUPPORTING ASSOCIATION —
+                                </h3>
+                                <div className="flex justify-center">
+                                    <div className="bg-cosmic-panel/40 border border-cosmic-text-muted/20 rounded-lg p-8 shadow-depth hover:border-cosmic-blue-light/30 transition-all duration-500">
+                                        <Link href="https://www.aisp.sg/">
+                                            <img className="max-w-[280px] h-[180px] object-contain" src="/images/sponsors/AISP/AiSP.png" alt="AISP" />
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Visionary Tier */}
+                        <div className="space-y-6">
+                            <h3 className="text-xl font-mono text-cosmic-blue-light/70 text-center tracking-wider">
+                                — VISIONARY —
+                            </h3>
+                            <div className="flex justify-center">
+                                <div className="bg-cosmic-panel/40 border border-cosmic-blue-light/20 rounded-lg p-6 hover:border-cosmic-blue-light/35 transition-colors duration-500" style={{ boxShadow: '0 0 15px rgba(96, 165, 250, 0.12), inset 0 0 18px rgba(96, 165, 250, 0.04)' }}>
+                                    <Link href="https://www.div0.sg/">
+                                        <img className="max-w-[250px] h-[160px] object-contain" src="/images/sponsors/Div0/div0.png" alt="Div0" />
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* In-Kind Tier */}
+                        <div className="space-y-6">
+                            <h3 className="text-xl font-mono text-cosmic-text-muted text-center tracking-wider">
+                                — IN-KIND —
+                            </h3>
+                            <div className="flex flex-wrap justify-center gap-8">
+                                <div className="bg-cosmic-panel/40 border border-cosmic-text-muted/20 rounded-lg p-6 shadow-depth hover:border-cosmic-red-light/30 transition-all duration-500">
+                                    <Link href="https://www.cyberyouth.sg/">
+                                        <img className="max-w-[220px] h-[140px] object-contain" src="/images/sponsors/CYS/CYS.png" alt="CYS" />
+                                    </Link>
+                                </div>
+                                <div className="bg-cosmic-panel/40 border border-cosmic-text-muted/20 rounded-lg p-6 shadow-depth hover:border-cosmic-red-light/30 transition-all duration-500">
+                                    <Link href="https://www.offsec.com/">
+                                        <img className="max-w-[220px] h-[140px] object-contain" src="/images/sponsors/OffSec/OffSec.png" alt="OffSec" />
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -266,6 +357,17 @@ function IndexPage() {
                             <img className="w-20 md:w-28 h-auto hover:scale-110 transition-transform duration-300" src="/images/socials/linkedin.png" alt="LinkedIn" />
                         </Link>
                     </div>
+
+                    <p className="text-cosmic-text-muted text-sm">
+                        Still not enough CTF action for you? Check out{' '}
+                        <a 
+                            href="https://dsta.gov.sg/brainhack" 
+                            className="text-cosmic-blue-light hover:text-cosmic-red-light transition-colors duration-300 underline"
+                        >
+                            DSTA's BrainHacks
+                        </a>{' '}
+                        too!
+                    </p>
                 </div>
 
                 {/* Footer Spacing */}
@@ -275,4 +377,4 @@ function IndexPage() {
     );
 }
 
-export default IndexPage;
+export default App;

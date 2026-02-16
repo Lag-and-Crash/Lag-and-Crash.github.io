@@ -1,5 +1,6 @@
 import React from 'react';
-import Logo from '../images/logo.svg';
+
+const Logo = '/images/logo.svg';
 
 export default function Header() {
 
