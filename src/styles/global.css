@@ -10,5 +10,20 @@ html {
 }
 
 body {
-    font-family: Montserrat;
+    font-family: Montserrat, system-ui, sans-serif;
+    background: #05070D;
+    color: #E5E7EB;
+}
+
+/* Cosmic Design System - Minimal Global Styles */
+
+/* Smooth transitions for interactive elements */
+a, button {
+    transition: color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Ensure proper layering */
+.content-layer {
+    position: relative;
+    z-index: 10;
 }

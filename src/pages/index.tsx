@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
+import TerminalBlock, { createTerminalLines } from '../components/TerminalBlock';
 import Hacker from '../images/hacker.png';
-import Arrow from '../images/arrow.png';
 import NP from '../images/logos/NP.png';
 import NYP from '../images/logos/NYP.png';
 import TP from '../images/logos/TP.png';
@@ -12,7 +12,6 @@ import Div0 from '../images/sponsors/Div0/div0.png';
 import CSA from '../images/sponsors/CSA/CSA.png';
 import DSTA from '../images/sponsors/DSTA/DSTA.png';
 import DIS from "../images/sponsors/DIS/DIS.png";
-import GT from '../images/sponsors/GOVTECH/GovTechSg.png';
 import AISP from '../images/sponsors/AISP/AiSP.png';
 import CYS from '../images/sponsors/CYS/CYS.png';
 import OS from '../images/sponsors/OffSec/OffSec.png';
@@ -22,344 +21,393 @@ import Discord from '../images/socials/discord.png';
 import Instagram from '../images/socials/instagram.png';
 import Youtube from '../images/socials/youtube.png';
 import LinkedIn from '../images/socials/linkedin.png';
-import '../styles/fog.css';
-
-const equalLoaderPermutation = [
-    '\u00A0\u00A0\u00A0\u00A0', '=\u00A0\u00A0\u00A0', '==\u00A0\u00A0', '===\u00A0', '====', '\u00A0===', '\u00A0\u00A0==', '\u00A0\u00A0\u00A0=', '\u00A0\u00A0\u00A0\u00A0',
-    '\u00A0\u00A0\u00A0=', '\u00A0\u00A0==', '\u00A0===', '====', '====', '===\u00A0', '==\u00A0\u00A0', '=\u00A0\u00A0\u00A0', '\u00A0\u00A0\u00A0\u00A0'
-];
+import '../styles/nebula.css';
 
 function Link({ href, children }: { href: string; children: React.ReactNode | React.ReactNode[] }) {
-
     return <a href={href} target="_blank" rel="noreferrer">{children}</a>;
-
 }
 
 export function Head() {
-
     return (<>
         <link rel="icon" type="image/x-icon" href="/logo.png" />
-        <title>Lag and Crash 2025</title>
+        <title>Lag and Crash 6.0</title>
     </>);
-
 }
 
 function IndexPage() {
 
     const [hasPlayed, setPlayed] = useState(false);
-    const [equalLoader, setEqualLoader] = useState('\u00A0\u00A0\u00A0\u00A0');
-    const [sponsorsLoaderText, setSponsorsLoaderText] = useState('Starting sponsors.d service...');
+    const [sponsorsVisible, setSponsorsVisible] = useState(false);
 
     useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && !hasPlayed) {
+                        setTimeout(() => {
+                            setSponsorsVisible(true);
+                            setPlayed(true);
+                        }, 800);
+                    }
+                });
+            },
+            {
+                threshold: 0.1
+            }
+        );
 
-        let int: NodeJS.Timer;
-
-        const cb: IntersectionObserverCallback = (entries) => {
-
-            clearInterval(int);
-            if (hasPlayed) return;
-
-            setSponsorsLoaderText('Starting sponsors.d service...');
-
-            entries.forEach(() => {
-
-                let i = 0;
-                int = setInterval(() => {
-
-                    if (i < equalLoaderPermutation.length - 1) i += 1;
-                    else i = 0;
-                    setEqualLoader(equalLoaderPermutation[i]);
-
-                }, 50);
-
-                setTimeout(() => {
-
-                    setEqualLoader('\u00A0OK\u00A0');
-                    setSponsorsLoaderText('Started sponsors.d service');
-                    setPlayed(true);
-                    clearInterval(int);
-
-                }, 2000);
-
-            });
-
-        };
-
-        const observer = new IntersectionObserver(cb, {
-            root: document.querySelector('#root'),
-            rootMargin: '0px',
-            threshold: 1.0
-        });
-
-        const toObserve = document.getElementById('loader');
+        const toObserve = document.getElementById('sponsors-section');
         if (toObserve) observer.observe(toObserve);
 
         return () => observer.disconnect();
-
     }, [hasPlayed]);
 
-    return (<div className="w-full h-screen bg-black">
+    const bootTerminalLines = createTerminalLines([
+        { type: 'command', content: 'boot lnc_6.0' },
+        { type: 'output', content: 'Initializing inter-poly CTF environment…' },
+        { type: 'output', content: 'Status: Accepting challengers' },
+    ]);
 
-        {/* Top Landing */}
-        <div className="w-full h-full relative flex">
-            <div id="foglayer_01" className="fog xl:block hidden">
-                <div className="image01" />
-                <div className="image02" />
+    const aboutTerminalLines = createTerminalLines([
+        { type: 'command', content: 'cat about.txt' },
+        { type: 'empty' },
+        { type: 'output', content: 'Lag and Crash is an inter-polytechnic CTF targeted at' },
+        { type: 'output', content: 'Polytechnic, ITE and JC students. Organised between' },
+        { type: 'output', content: 'the Polytechnic Cybersecurity Interest Groups.' },
+        { type: 'empty' },
+        { type: 'output', content: 'This competition provides exposure to students from' },
+        { type: 'output', content: 'various Institutions of Higher Learning to the field' },
+        { type: 'output', content: 'of Cybersecurity and the concepts involved.' },
+    ]);
+
+    const eligibilityTerminalLines = createTerminalLines([
+        { type: 'command', content: 'cat eligibility.txt' },
+        { type: 'empty' },
+        { type: 'output', content: '• Jeopardy CTF: Open to all teams' },
+        { type: 'output', content: '• Finals & Prizes: Pre-University teams only' },
+        { type: 'output', content: '  (Secondary School, JC, Polytechnic)' },
+        { type: 'output', content: '• Location: Teams must be Singapore-based' },
+    ]);
+
+    return (
+        <div className="w-full min-h-screen bg-cosmic-base">
+            {/* Nebula Background System (Optimized: 2 layers) */}
+            <div className="nebula-container">
+                <div id="nebula_layer_01" />
+                <div id="nebula_layer_02" />
             </div>
-            <div id="foglayer_02" className="fog xl:block hidden">
-                <div className="image01" />
-                <div className="image02" />
-            </div>
-            <div id="foglayer_03" className="fog xl:block hidden">
-                <div className="image01" />
-                <div className="image02" />
-            </div>
-            <div className="w-full h-full flex flex-col absolute z-50">
+
+            {/* Starfield and overlays */}
+            <div className="starfield" />
+            <div className="grain-overlay" />
+            <div className="vignette" />
+            <div className="scanlines" />
+
+            {/* Rim lighting */}
+            <div className="rim-light-top" />
+            <div className="rim-light-left" />
+            <div className="rim-light-right" />
+
+            {/* Corner frames */}
+            <div className="cosmic-frame-tl" />
+            <div className="cosmic-frame-tr" />
+            <div className="cosmic-frame-bl" />
+            <div className="cosmic-frame-br" />
+
+            {/* Content Layer */}
+            <div className="content-layer">
                 <Header />
-                <div className="flex w-4/5 mx-auto h-5/6 md:h-full flex-col lg:flex-row mt-auto md:mt-0">
-                    <div className="w-full xl:h-full flex items-center flex-col justify-center text-white mt-auto lg:mt-0">
-                        <h1 className="xl:text-5xl md:text-3xl text-xl font-bold xl:mb-12 pt-4 md:mb-8 mb-4 leading-normal tracking-[0.4rem]">
-                            Which will crash first, your computer, or
-                            <span className="text-highlight font-extrabold hero glitch layers" data-text="YOUth?"> YOUth?</span>
-                        </h1>
-                        <span className="xl:text-2xl md:text-lg text-sm tracking-widest">
-                            Join us in our upcoming 50 hour Capture-The-Flag as we band together
-                            as Earth&apos;s last group of revolutionaries to reclaim Cyberspace and
-                            restore peace to our world. You are among the last remaining survivors,
-                            Cyberspace is counting on you!
-                            <br />
-                            <br />
-                            What are you waiting for?  You&apos;re our only hope!
-                        </span>
-                        <a href="https://forms.gle/AP2DmE2f6mqNPJJMA" className="bg-transparent border-highlight border-4 self-start px-6 py-3 font-bold text-2xl mt-10 rounded-lg text-white hover:text-black hover:bg-highlight transition-all">Sign up now!</a>
+
+                {/* Hero Section */}
+                <div className="min-h-screen flex items-center justify-center px-4 md:px-8 pt-24 pb-16">
+                    <div className="max-w-7xl w-full mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-top">
+                        {/* Left: Hero Content */}
+                        <div className="space-y-8 animate-fadeIn mt-5">
+                            {/* Main Headline */}
+                            <h1 
+                                className="text-4xl md:text-5xl xl:text-6xl font-bold leading-tight tracking-wide"
+                                style={{
+                                    background: 'linear-gradient(135deg, #60A5FA 0%, #E5E7EB 100%)',
+                                    WebkitBackgroundClip: 'text',
+                                    WebkitTextFillColor: 'transparent',
+                                    backgroundClip: 'text',
+                                    textShadow: '0 2px 20px rgba(96, 165, 250, 0.2)'
+                                }}
+                            >
+                                Multiple Targets.<br />
+                                Multiple Exploits.<br />
+                                One Winner.
+                            </h1>
+
+                            {/* Terminal Boot Block */}
+                            <TerminalBlock lines={bootTerminalLines} showCursor variant="blue" />
+
+                            {/* Description */}
+                            <p className="text-cosmic-text-secondary text-lg md:text-xl leading-relaxed">
+                                Lag and Crash is back for its <span className="text-cosmic-blue-light font-semibold">sixth edition</span>. 
+                                Whether you're new to cybersecurity or an experienced flag hunter, this is your chance to learn, 
+                                compete, and prove your skills.
+                            </p>
+
+                            <p className="text-cosmic-text-secondary text-base md:text-lg leading-relaxed">
+                                Join us for a <span className="text-cosmic-text-primary font-semibold">30-hour online Jeopardy CTF</span> (March 16-17), 
+                                with <span className="text-cosmic-red-light font-semibold">top 10 teams</span> advancing to the{' '}
+                                <span className="text-cosmic-red-light font-semibold">King of the Hill</span> finals at SIT on March 21.
+                            </p>
+
+                            {/* CTA Button */}
+                            <div className="pt-4">
+                                <a 
+                                    href="https://forms.gle/AP2DmE2f6mqNPJJMA"
+                                    className="inline-block group relative"
+                                >
+                                    <div className="absolute inset-0 bg-gradient-to-r from-cosmic-blue-mid to-cosmic-red-mid opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg blur-xl" />
+                                    <div className="relative bg-cosmic-panel border-l-2 border-cosmic-blue-light border-r-2 border-cosmic-red-light px-8 py-4 rounded-lg transition-all duration-300 group-hover:shadow-glow-blue">
+                                        <span className="text-cosmic-text-primary font-bold text-xl tracking-wide">
+                                            Register Now
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        {/* Right: Hooded Figure with Rim Lighting */}
+                        <div className="relative lg:block hidden animate-slideUp">
+                            <div className="relative">
+                                {/* Blue rim light (left side) */}
+                                <div 
+                                    className="absolute -left-8 top-1/4 w-32 h-3/4 opacity-40 blur-3xl"
+                                    style={{
+                                        background: 'linear-gradient(180deg, rgba(96, 165, 250, 0.4) 0%, transparent 100%)'
+                                    }}
+                                />
+                                {/* Red rim light (right side) */}
+                                <div 
+                                    className="absolute -right-8 top-1/3 w-32 h-2/3 opacity-40 blur-3xl"
+                                    style={{
+                                        background: 'linear-gradient(180deg, rgba(248, 113, 113, 0.4) 0%, transparent 100%)'
+                                    }}
+                                />
+                                {/* Atmospheric fade at bottom */}
+                                <div 
+                                    className="absolute bottom-0 left-0 right-0 h-1/3 opacity-60"
+                                    style={{
+                                        background: 'linear-gradient(0deg, #05070D 0%, transparent 100%)'
+                                    }}
+                                />
+                                <img 
+                                    src={Hacker} 
+                                    className="relative z-10 w-full h-auto" 
+                                    alt="Hacker silhouette"
+                                    style={{ 
+                                        transform: 'scale(-1, 1)',
+                                        filter: 'drop-shadow(0 0 40px rgba(96, 165, 250, 0.2)) drop-shadow(0 0 60px rgba(248, 113, 113, 0.15))'
+                                    }} 
+                                />
+                            </div>
+                        </div>
                     </div>
-                    <img src={Hacker} className="lg:h-4/5 h-1/2 lg:self-end self-center" alt="Hacker" style={{ transform: 'scale(-1, 1)' }} />
                 </div>
-                <a href="#about" className="lg:block hidden">
-                    <img src={Arrow} className="absolute z-40 left-0 right-0 bottom-0 mx-auto mb-10 brightness-150 " alt="Arrow" />
-                </a>
+
+                {/* About Section */}
+                <div id="about" className="max-w-5xl mx-auto px-4 md:px-8 py-20">
+                    <TerminalBlock 
+                        lines={aboutTerminalLines} 
+                        className="mb-12"
+                        variant="blue"
+                    />
+
+                    <TerminalBlock 
+                        lines={eligibilityTerminalLines}
+                        className="mb-12"
+                        variant="red"
+                    />
+
+                    <p className="text-cosmic-text-secondary text-center text-lg">
+                        Find out more details on prizes, dates and team formation{' '}
+                        <a 
+                            href="/details" 
+                            className="text-cosmic-blue-light hover:text-cosmic-red-light transition-colors duration-300 underline"
+                        >
+                            here
+                        </a>.
+                    </p>
+                </div>
+
+                {/* Team Logos */}
+                <div className="max-w-5xl mx-auto px-4 md:px-8 py-16">
+                    <div className="bg-cosmic-panel/30 border border-cosmic-blue-light/20 rounded-lg p-8" style={{ boxShadow: '0 0 15px rgba(96, 165, 250, 0.12), inset 0 0 18px rgba(96, 165, 250, 0.04)' }}>
+                        <h2 className="text-2xl font-bold text-cosmic-text-primary text-center mb-8 font-mono tracking-wide">
+                            Organised by Polytechnic Cybersecurity Interest Groups
+                        </h2>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
+                            <Link href="https://www.instagram.com/tp_cyber/">
+                                <img className="w-32 h-32 object-contain hover:scale-110 transition-transform duration-300" src={TP} alt="Temasek Polytechnic" />
+                            </Link>
+                            <Link href="https://www.instagram.com/nyp_infosec/">
+                                <img className="w-32 h-28 object-contain hover:scale-110 transition-transform duration-300" src={NYP} alt="Nanyang Polytechnic" />
+                            </Link>
+                            <Link href="https://www.instagram.com/nullsec.sig/">
+                                <img className="w-32 h-32 object-contain hover:scale-110 transition-transform duration-300" src={NP} alt="Ngee Ann Polytechnic" />
+                            </Link>
+                            <Link href="https://www.instagram.com/rp.hextech/">
+                                <img className="w-32 h-32 object-contain hover:scale-110 transition-transform duration-300" src={RP} alt="Republic Polytechnic" />
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Sponsors Section */}
+                <div id="sponsors-section" className="max-w-6xl mx-auto px-4 md:px-8 py-20">
+                    <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-cosmic-text-primary tracking-wide">
+                        Made Possible By
+                    </h2>
+
+                    <div className={`space-y-16 transition-opacity duration-1000 ${sponsorsVisible ? 'opacity-100' : 'opacity-0'}`}>
+                        {/* Platinum Tier */}
+                        <div className="space-y-6">
+                            <h3 className="text-xl font-mono text-cosmic-blue-light text-center tracking-wider">
+                                — PLATINUM —
+                            </h3>
+                            <div className="flex justify-center">
+                                <div className="bg-cosmic-panel/40 border border-cosmic-blue-light/25 rounded-lg p-8 hover:border-cosmic-blue-light/40 transition-colors duration-500" style={{ boxShadow: '0 0 20px rgba(96, 165, 250, 0.15), inset 0 0 20px rgba(96, 165, 250, 0.05)' }}>
+                                    <Link href="https://www.csit.gov.sg/">
+                                        <img className="max-w-[330px] h-[230px] object-contain" src={CSIT} alt="CSIT" />
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Gold Tier */}
+                        <div className="space-y-6">
+                            <h3 className="text-xl font-mono text-yellow-500/80 text-center tracking-wider">
+                                — GOLD —
+                            </h3>
+                            <div className="flex flex-wrap justify-center gap-8">
+                                <div className="bg-cosmic-panel/40 border border-cosmic-blue-light/20 rounded-lg p-8 hover:border-cosmic-blue-light/35 transition-colors duration-500" style={{ boxShadow: '0 0 15px rgba(96, 165, 250, 0.12), inset 0 0 18px rgba(96, 165, 250, 0.04)' }}>
+                                    <Link href="https://www.dsta.gov.sg/">
+                                        <img className="max-w-[300px] h-[200px] object-contain" src={DSTA} alt="DSTA" />
+                                    </Link>
+                                </div>
+                                <div className="bg-cosmic-panel/40 border border-cosmic-blue-light/20 rounded-lg p-8 hover:border-cosmic-blue-light/35 transition-colors duration-500" style={{ boxShadow: '0 0 15px rgba(96, 165, 250, 0.12), inset 0 0 18px rgba(96, 165, 250, 0.04)' }}>
+                                    <Link href="https://www.dis.com/">
+                                        <img className="max-w-[300px] h-[200px] object-contain" src={DIS} alt="DIS" />
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Silver & Supporting Association */}
+                        <div className="grid md:grid-cols-2 gap-12">
+                            <div className="space-y-6">
+                                <h3 className="text-xl font-mono text-zinc-400 text-center tracking-wider">
+                                    — SILVER —
+                                </h3>
+                                <div className="flex justify-center">
+                                    <div className="bg-cosmic-panel/40 border border-cosmic-text-muted/20 rounded-lg p-8 shadow-depth hover:border-cosmic-blue-light/30 transition-all duration-500">
+                                        <Link href="https://www.csa.gov.sg/">
+                                            <img className="max-w-[280px] h-[180px] object-contain" src={CSA} alt="CSA" />
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="space-y-6">
+                                <h3 className="text-xl font-mono text-cosmic-text-muted text-center tracking-wider">
+                                    — SUPPORTING ASSOCIATION —
+                                </h3>
+                                <div className="flex justify-center">
+                                    <div className="bg-cosmic-panel/40 border border-cosmic-text-muted/20 rounded-lg p-8 shadow-depth hover:border-cosmic-blue-light/30 transition-all duration-500">
+                                        <Link href="https://www.aisp.sg/">
+                                            <img className="max-w-[280px] h-[180px] object-contain" src={AISP} alt="AISP" />
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Visionary Tier */}
+                        <div className="space-y-6">
+                            <h3 className="text-xl font-mono text-cosmic-blue-light/70 text-center tracking-wider">
+                                — VISIONARY —
+                            </h3>
+                            <div className="flex justify-center">
+                                <div className="bg-cosmic-panel/40 border border-cosmic-blue-light/20 rounded-lg p-6 hover:border-cosmic-blue-light/35 transition-colors duration-500" style={{ boxShadow: '0 0 15px rgba(96, 165, 250, 0.12), inset 0 0 18px rgba(96, 165, 250, 0.04)' }}>
+                                    <Link href="https://www.div0.sg/">
+                                        <img className="max-w-[250px] h-[160px] object-contain" src={Div0} alt="Div0" />
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* In-Kind Tier */}
+                        <div className="space-y-6">
+                            <h3 className="text-xl font-mono text-cosmic-text-muted text-center tracking-wider">
+                                — IN-KIND —
+                            </h3>
+                            <div className="flex flex-wrap justify-center gap-8">
+                                <div className="bg-cosmic-panel/40 border border-cosmic-text-muted/20 rounded-lg p-6 shadow-depth hover:border-cosmic-red-light/30 transition-all duration-500">
+                                    <Link href="https://www.cyberyouth.sg/">
+                                        <img className="max-w-[220px] h-[140px] object-contain" src={CYS} alt="CYS" />
+                                    </Link>
+                                </div>
+                                <div className="bg-cosmic-panel/40 border border-cosmic-text-muted/20 rounded-lg p-6 shadow-depth hover:border-cosmic-red-light/30 transition-all duration-500">
+                                    <Link href="https://www.offsec.com/">
+                                        <img className="max-w-[220px] h-[140px] object-contain" src={OS} alt="OffSec" />
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Contacts Section */}
+                <div id="contacts" className="max-w-4xl mx-auto px-4 md:px-8 py-20 text-center">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-12 tracking-[0.3rem]"
+                        style={{
+                            background: 'linear-gradient(135deg, #60A5FA 0%, #8B5CF6 50%, #F87171 100%)',
+                            WebkitBackgroundClip: 'text',
+                            WebkitTextFillColor: 'transparent',
+                            backgroundClip: 'text'
+                        }}
+                    >
+                        INTERPOLY
+                    </h2>
+
+                    <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 mb-12">
+                        <Link href="https://discord.gg/H6U6NykFRe">
+                            <img className="w-20 md:w-28 h-auto hover:scale-110 transition-transform duration-300" src={Discord} alt="Discord" />
+                        </Link>
+                        <Link href="https://www.instagram.com/lagandcrash/">
+                            <img className="w-20 md:w-28 h-auto hover:scale-110 transition-transform duration-300" src={Instagram} alt="Instagram" />
+                        </Link>
+                        <Link href="https://www.youtube.com/@lagandcrash">
+                            <img className="w-20 md:w-28 h-auto hover:scale-110 transition-transform duration-300" src={Youtube} alt="Youtube" />
+                        </Link>
+                        <Link href="https://github.com/Lag-and-Crash">
+                            <img className="w-20 md:w-28 h-auto hover:scale-110 transition-transform duration-300" src={Github} alt="Github" />
+                        </Link>
+                        <Link href="https://www.linkedin.com/company/lagandcrash/">
+                            <img className="w-20 md:w-28 h-auto hover:scale-110 transition-transform duration-300" src={LinkedIn} alt="LinkedIn" />
+                        </Link>
+                    </div>
+
+                    <p className="text-cosmic-text-muted text-sm">
+                        Still not enough CTF action for you? Check out{' '}
+                        <a 
+                            href="https://dsta.gov.sg/brainhack" 
+                            className="text-cosmic-blue-light hover:text-cosmic-red-light transition-colors duration-300 underline"
+                        >
+                            DSTA's BrainHacks
+                        </a>{' '}
+                        too!
+                    </p>
+                </div>
+
+                {/* Footer Spacing */}
+                <div className="h-20" />
             </div>
         </div>
-
-        {/* About */}
-        <div id="about" className="xl:w-3/5 w-4/5 mx-auto py-28 flex justify-center flex-col text-white">
-            <h1 className="xl:!text-2xl !text-lg font-bold mb-10 font-mono typing">&gt;&gt; cat about.txt</h1>
-            <span className="xl:text-xl tracking-widest appear1">
-                Lag and Crash is an inter-polytechnic CTF targeted at Polytechnic,
-                Institute of Technical Education and Junior College students. The event is organised
-                between the Polytechnic Cybersecurity Interest Groups.
-            </span>
-            <br />
-            <span className="xl:text-xl tracking-widest appear1">
-                The goal of this CTF competition is to provide a means of exposure for students
-                from the various Institutions of Higher Learning (IHL) to the field of
-                Cybersecurity, and give them a taste of the many different concepts
-                involved in this complex field.
-            </span>
-            <br />
-            <span className="xl:text-xl tracking-widest appear1">
-                Find out more details on prizes, dates and team formation
-                <a href="/details" className="mx-2 underline hover:text-highlight">here.</a>
-            </span>
-            <h1 className="xl:!text-2xl !text-lg font-bold mb-10 font-mono typing2 mt-12">&gt;&gt; grep -rnw &quot;./&quot; -e &quot;Team&quot;</h1>
-
-            <div className="flex flex-row flex-wrap justify-center items-center">
-                <div className="flex justify-center p-2">
-                    <Link href="https://www.instagram.com/tp_cyber/"><img className="w-40 h-40 max-w-full" src={TP} alt="Temasek Polytechnic" /></Link>
-                </div>
-                <div className="flex justify-center p-2">
-                    <Link href="https://www.instagram.com/nyp_infosec/"><img className="w-40 h-32 max-w-full" src={NYP} alt="Nanyang Polytechnic" /></Link>
-                </div>
-                <div className="flex justify-center p-2">
-                    <Link href="https://www.instagram.com/nullsec.sig/"><img className="w-40 h-40 max-w-full" src={NP} alt="Ngee Ann Polytechnic" /></Link>
-                </div>
-                <div className="flex justify-center p-2">
-                    <Link href="https://www.instagram.com/rp.hextech/"><img className="w-40 h-40 max-w-full" src={RP} alt="Republic Polytechnic" /></Link>
-                </div>
-            </div>
-
-            <h1 className="xl:!text-2xl !text-lg font-bold mb-10 font-mono typing3">&gt;&gt;</h1>
-        </div>
-
-        <div className="w-4/5 mx-auto flex items-center relative mb-8" style={{ height: 16, filter: 'drop-shadow(rgba(0, 224, 199, 0.6) -1px -1px 2px) drop-shadow(rgba(0, 224, 199, 0.6) 1px 1px 2px)' }}>
-            <div className="w-1/2 bg-white self-end h-px" />
-            <div className="flex items-center h-full justify-center overflow-hidden" style={{ width: 16 }}>
-                <div className="h-px bg-white absolute -rotate-45" style={{ width: 22 }} />
-            </div>
-            <div className="w-1/2 bg-white self-start h-px" />
-            <div className="absolute flex justify-end space-x-3 right-0 bottom-0 w-1/5">
-                <div className="h-2 bg-highlight w-1/5 rounded-sm" />
-                <div className="h-2 bg-highlight w-1/5 rounded-sm" />
-                <div className="h-2 bg-highlight w-3/5 rounded-sm" />
-            </div>
-        </div>
-
-        {/* Sponsors */}
-        <div id="sponsors" className="xl:w-3/5 w-4/5 mx-auto py-20 flex items-center justify-center flex-col text-white relative">
-            <h1 className="font-mono xl:text-lg tracking-widest w-full" id="loader">
-                [
-                {equalLoader}
-                ]&nbsp;
-                {sponsorsLoaderText}
-            </h1>
-            <h1 className="font-mono xl:text-lg tracking-widest w-full mb-4 break-words" id="loader">
-                [
-                {equalLoader}
-                ]
-                sh: python -c &quot;print render_template(&apos;sponsors.jinja&apos;)&quot;
-            </h1>
-            <div className={`${equalLoader.includes('OK') ? 'opacity-100' : 'opacity-0'} w-full`}>
-                <h1 className="text-sm font-bold tracking-widest text-zinc-500 font-mono w-full hover:text-white/75 cursor-pointer transition z-50">&lt;h1&gt;Made possible by the wonderful folks at:&lt;/h1&gt;</h1>
-                <h1 className="text-sm font-bold tracking-widest text-zinc-500 mb-10 font-mono w-full hover:text-white/75 cursor-pointer transition z-50">&#123;% for sponsor in sponsors %&#125;</h1>
-
-            <div className="container mx-auto px-4">
-            {/* Platinum Tier */}
-            <div className="flex flex-col items-center mb-10">
-                <h1 className="text-lg font-bold tracking-widest text-sky-300 mb-4 font-mono text-center hover:text-white/75 cursor-pointer transition z-50">
-                &lt;h1&gt;Platinum&lt;/h1&gt;
-                </h1>
-                <div className="flex justify-center">
-                <Link href="https://www.csit.gov.sg/">
-                    <img
-                    className="max-w-[330px] h-[230px] object-contain"
-                    src={CSIT}
-                    alt="CSIT"
-                    />
-                </Link>
-                </div>
-            </div>
-
-            {/* Gold Tier */}
-            <div className="flex flex-col items-center mb-10">
-                <h1 className="text-lg font-bold tracking-widest text-yellow-500 mb-4 font-mono text-center hover:text-white/75 cursor-pointer transition z-50">
-                &lt;h2&gt;Gold&lt;/h2&gt;
-                </h1>
-                <div className="flex justify-center gap-8">
-                <Link href="https://www.dsta.gov.sg/">
-                    <img
-                    className="max-w-[330px] h-[230px] object-contain"
-                    src={DSTA}
-                    alt="DSTA"
-                    />
-                </Link>
-                <Link href="https://www.dis.com/">
-                    <img
-                    className="max-w-[330px] h-[230px] object-contain"
-                    src={DIS}
-                    alt="DIS"
-                    />
-                </Link>
-                </div>
-            </div>
-
-            {/* Silver & Supporting Association Tier */}
-            <div className="flex flex-wrap justify-center gap-8 mb-10">
-                {/* Silver */}
-                <div className="flex flex-col items-center">
-                <h1 className="text-lg font-bold tracking-widest text-zinc-300 mb-4 font-mono text-center hover:text-white/75 cursor-pointer transition z-50">
-                    &lt;h3&gt;Silver&lt;/h3&gt;
-                </h1>
-                <Link href="https://www.csa.gov.sg/">
-                    <img
-                    className="max-w-[330px] h-[230px] object-contain"
-                    src={CSA}
-                    alt="CSA"
-                    />
-                </Link>
-                </div>
-                {/* Supporting Association */}
-                <div className="flex flex-col items-center">
-                <h1 className="text-lg font-bold tracking-widest text-yellow-700 mb-4 font-mono text-center hover:text-white/75 cursor-pointer transition z-50">
-                    &lt;h4&gt;Supporting Association&lt;/h4&gt;
-                </h1>
-                <Link href="https://www.aisp.sg/">
-                    <img
-                    className="max-w-[330px] h-[230px] object-contain"
-                    src={AISP}
-                    alt="AISP"
-                    />
-                </Link>
-                </div>
-            </div>
-
-            {/* Visionary Tier */}
-            <div className="flex flex-col items-center mb-10">
-                <h1 className="text-lg font-bold tracking-widest text-sky-300 mb-4 font-mono text-center hover:text-white/75 cursor-pointer transition z-50">
-                &lt;h5&gt;Visionary&lt;/h5&gt;
-                </h1>
-                <div className="flex justify-center">
-                <Link href="https://www.div0.sg/">
-                    <img
-                    className="max-w-[330px] h-[230px] object-contain"
-                    src={Div0}
-                    alt="Div0"
-                    />
-                </Link>
-                </div>
-            </div>
-
-            {/* In-Kind Tier */}
-            <div className="flex flex-col items-center mb-10">
-                <h1 className="text-lg font-bold tracking-widest text-yellow-700 mb-4 font-mono text-center hover:text-white/75 cursor-pointer transition z-50">
-                &lt;h5&gt;In-Kind&lt;/h5&gt;
-                </h1>
-                <div className="flex justify-center gap-8">
-                <Link href="https://www.cyberyouth.sg/">
-                    <img
-                    className="max-w-[330px] h-[230px] object-contain"
-                    src={CYS}
-                    alt="CYS"
-                    />
-                </Link>
-                <Link href="https://www.offsec.com/">
-                    <img
-                    className="max-w-[330px] h-[230px] object-contain"
-                    src={OS}
-                    alt="OffSec"
-                    />
-                </Link>
-                </div>
-            </div>
-            </div>
-
-            <h1 className="text-sm font-bold tracking-widest text-zinc-500 mb-10 font-mono w-full text-center hover:text-white/75 cursor-pointer transition z-50">
-            &#123;% endfor %&#125;
-            </h1>
-        </div>
-        </div>
-        {/* Contacts */}
-        <div id="contacts" className="w-3/5 mx-auto py-20 flex items-center justify-center flex-col text-white relative">
-            <div className="opacity-50 absolute top-0 bottom-0 left-0 right-0 z-0" style={{ backgroundImage: "url('/grid.svg')", WebkitMaskImage: 'radial-gradient(50% 50% at 50% 50%, black 40%, transparent 70%)' }} />
-            
-            <div className="flex flex-wrap justify-center items-center space-x-4 lg:space-x-8 my-10 z-50">
-
-                <Link href="https://discord.gg/H6U6NykFRe">
-                    <img className="w-24 lg:w-32 h-auto mx-auto" src={Discord} alt="Discord" />
-                </Link>
-                <Link href="https://www.instagram.com/lagandcrash/">
-                    <img className="w-24 lg:w-32 h-auto mx-auto" src={Instagram} alt="Instagram" />
-                </Link>
-                <Link href="https://www.youtube.com/@lagandcrash">
-                    <img className="w-24 lg:w-32 h-auto mx-auto" src={Youtube} alt="Youtube" />
-                </Link>
-                <Link href="https://github.com/Lag-and-Crash">
-                    <img className="w-24 lg:w-32 h-auto mx-auto" src={Github} alt="Github" />
-                </Link>
-                <Link href="https://www.linkedin.com/company/lagandcrash/">
-                    <img className="w-24 lg:w-32 h-auto mx-auto" src={LinkedIn} alt="LinkedIn" />
-                </Link>
-
-            </div>
-
-        </div>
-        <h1 className="text-sm font-bold tracking-widest pb-10 font-mono w-full text-white/50 text-center transition z-50">
-            Still not enough CTF action for you? Why not check out
-            <a href="https://dsta.gov.sg/brainhack" className="underline mx-2 cursor-pointer hover:text-white/75 text-sky-300">DSTA&apos;s BrainHacks</a>
-            too!
-        </h1>
-
-    </div>);
-
+    );
 }
 
 export default IndexPage;

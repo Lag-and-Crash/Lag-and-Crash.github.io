@@ -1,0 +1,365 @@
+/* ============================================
+   OPTIMIZED COSMIC NEBULA SYSTEM
+   GPU-accelerated, 60fps performance
+   ============================================ */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #05070D;
+    overflow-x: hidden;
+}
+
+/* ============================================
+   NEBULA LAYER SYSTEM (OPTIMIZED)
+   - Reduced to 2 layers for performance
+   - Transform-only animation (GPU compositing)
+   - Static blur (no animated filters)
+   ============================================ */
+
+.nebula-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+    isolation: isolate;
+    contain: layout style paint;
+}
+
+/* Blue-dominant nebula layer - GPU accelerated */
+#nebula_layer_01 {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        ellipse at 30% 40%, 
+        rgba(37, 99, 235, 0.25) 0%, 
+        rgba(30, 64, 175, 0.15) 20%, 
+        transparent 60%
+    );
+    filter: blur(80px);
+    will-change: transform;
+    animation: nebulaDriftSlow 140s ease-in-out infinite;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Red accent nebula layer - GPU accelerated */
+#nebula_layer_02 {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        ellipse at 70% 60%, 
+        rgba(185, 28, 28, 0.22) 0%, 
+        rgba(127, 29, 29, 0.12) 25%, 
+        transparent 55%
+    );
+    filter: blur(90px);
+    will-change: transform;
+    animation: nebulaDriftMedium 110s ease-in-out infinite;
+    animation-delay: -20s;
+    transform: translate3d(0, 0, 0);
+}
+
+/* ============================================
+   NEBULA DRIFT ANIMATIONS (GPU OPTIMIZED)
+   - Using translate3d for hardware acceleration
+   - No filter/shadow animation
+   ============================================ */
+
+@keyframes nebulaDriftSlow {
+    0% {
+        transform: translate3d(0%, 0%, 0) scale(1);
+    }
+    33% {
+        transform: translate3d(-8%, 12%, 0) scale(1.08);
+    }
+    66% {
+        transform: translate3d(5%, -10%, 0) scale(0.95);
+    }
+    100% {
+        transform: translate3d(0%, 0%, 0) scale(1);
+    }
+}
+
+@keyframes nebulaDriftMedium {
+    0% {
+        transform: translate3d(0%, 0%, 0) scale(1) rotate(0deg);
+    }
+    50% {
+        transform: translate3d(10%, -8%, 0) scale(1.1) rotate(2deg);
+    }
+    100% {
+        transform: translate3d(0%, 0%, 0) scale(1) rotate(0deg);
+    }
+}
+
+/* ============================================
+   STARFIELD OVERLAY
+   ============================================ */
+
+.starfield {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 15% 25%, rgba(255,255,255,0.02) 0%, transparent 1%),
+        radial-gradient(circle at 85% 45%, rgba(255,255,255,0.015) 0%, transparent 1%),
+        radial-gradient(circle at 45% 75%, rgba(255,255,255,0.02) 0%, transparent 1%),
+        radial-gradient(circle at 65% 15%, rgba(255,255,255,0.018) 0%, transparent 1%),
+        radial-gradient(circle at 25% 85%, rgba(255,255,255,0.015) 0%, transparent 1%);
+    background-size: 300px 300px, 250px 250px, 350px 350px, 280px 280px, 320px 320px;
+    background-position: 0 0, 130px 80px, 50px 200px, 220px 150px, 100px 300px;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Noise grain texture for depth */
+.grain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 2;
+    mix-blend-mode: overlay;
+}
+
+/* ============================================
+   CINEMATIC VIGNETTE
+   ============================================ */
+
+.vignette {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        ellipse at center,
+        transparent 0%,
+        transparent 40%,
+        rgba(5, 7, 13, 0.4) 75%,
+        rgba(5, 7, 13, 0.8) 100%
+    );
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* ============================================
+   RIM LIGHTING SYSTEM
+   ============================================ */
+
+.rim-light-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(96, 165, 250, 0.3) 25%,
+        rgba(96, 165, 250, 0.4) 50%,
+        rgba(248, 113, 113, 0.3) 75%,
+        transparent 100%
+    );
+    box-shadow: 0 0 20px rgba(96, 165, 250, 0.2),
+                0 0 40px rgba(96, 165, 250, 0.1);
+    pointer-events: none;
+    z-index: 4;
+}
+
+.rim-light-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(96, 165, 250, 0.25) 30%,
+        rgba(96, 165, 250, 0.35) 50%,
+        rgba(96, 165, 250, 0.25) 70%,
+        transparent 100%
+    );
+    box-shadow: 0 0 15px rgba(96, 165, 250, 0.15);
+    pointer-events: none;
+    z-index: 4;
+}
+
+.rim-light-right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(248, 113, 113, 0.25) 30%,
+        rgba(248, 113, 113, 0.35) 50%,
+        rgba(248, 113, 113, 0.25) 70%,
+        transparent 100%
+    );
+    box-shadow: 0 0 15px rgba(248, 113, 113, 0.15);
+    pointer-events: none;
+    z-index: 4;
+}
+
+/* ============================================
+   SCANLINE OVERLAY (Subtle)
+   ============================================ */
+
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.03) 0px,
+        transparent 1px,
+        transparent 2px,
+        rgba(0, 0, 0, 0.03) 3px
+    );
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.2;
+}
+
+/* ============================================
+   CORNER FRAME ELEMENTS
+   ============================================ */
+
+.cosmic-frame-tl,
+.cosmic-frame-tr,
+.cosmic-frame-bl,
+.cosmic-frame-br {
+    position: fixed;
+    width: 120px;
+    height: 120px;
+    pointer-events: none;
+    z-index: 5;
+    opacity: 0.3;
+}
+
+.cosmic-frame-tl {
+    top: 0;
+    left: 0;
+    border-top: 1px solid rgba(96, 165, 250, 0.25);
+    border-left: 1px solid rgba(96, 165, 250, 0.25);
+    box-shadow: inset 20px 20px 30px rgba(96, 165, 250, 0.05);
+}
+
+.cosmic-frame-tr {
+    top: 0;
+    right: 0;
+    border-top: 1px solid rgba(248, 113, 113, 0.25);
+    border-right: 1px solid rgba(248, 113, 113, 0.25);
+    box-shadow: inset -20px 20px 30px rgba(248, 113, 113, 0.05);
+}
+
+.cosmic-frame-bl {
+    bottom: 0;
+    left: 0;
+    border-bottom: 1px solid rgba(96, 165, 250, 0.25);
+    border-left: 1px solid rgba(96, 165, 250, 0.25);
+    box-shadow: inset 20px -20px 30px rgba(96, 165, 250, 0.05);
+}
+
+.cosmic-frame-br {
+    bottom: 0;
+    right: 0;
+    border-bottom: 1px solid rgba(248, 113, 113, 0.25);
+    border-right: 1px solid rgba(248, 113, 113, 0.25);
+    box-shadow: inset -20px -20px 30px rgba(248, 113, 113, 0.05);
+}
+
+/* ============================================
+   CONTENT LAYER
+   ============================================ */
+
+.content-layer {
+    position: relative;
+    z-index: 10;
+}
+
+/* ============================================
+   STATIC EDGE GLOW (Replaces animated breathing)
+   ============================================ */
+
+.edge-glow-blue {
+    box-shadow: 
+        0 0 15px rgba(96, 165, 250, 0.12),
+        inset 0 0 18px rgba(96, 165, 250, 0.04);
+}
+
+.edge-glow-red {
+    box-shadow: 
+        0 0 15px rgba(248, 113, 113, 0.12),
+        inset 0 0 18px rgba(248, 113, 113, 0.04);
+}
+
+/* ============================================
+   TERMINAL CURSOR BLINK (Opacity-only animation)
+   ============================================ */
+
+@keyframes terminalBlink {
+    0%, 49% {
+        opacity: 1;
+    }
+    50%, 100% {
+        opacity: 0;
+    }
+}
+
+.terminal-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 18px;
+    background: rgba(96, 165, 250, 0.6);
+    margin-left: 2px;
+    animation: terminalBlink 1.2s step-end infinite;
+}
+
+/* ============================================
+   REDUCED MOTION ACCESSIBILITY
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    #nebula_layer_01,
+    #nebula_layer_02,
+    .terminal-cursor {
+        animation: none !important;
+    }
+    
+    #nebula_layer_01,
+    #nebula_layer_02 {
+        transform: translate3d(0, 0, 0) scale(1) !important;
+    }
+    
+    .terminal-cursor {
+        opacity: 1 !important;
+    }
+}
