@@ -1,0 +1,16 @@
+LAG AND CRASH 6.0 - CTF Competition by youths for youths
+
+Lag and Crash is an inter-polytechnic CTF targeted at Polytechnic, Institute of Technical Education and Junior College students. The event is organised between the Polytechnic Cybersecurity Interest Groups.
+
+The goal of this CTF competition is to provide a means of exposure for students from the various Institutions of Higher Learning (IHL) to the field of Cybersecurity, and give them a taste of the many different concepts involved in this complex field.
+
+ELIGIBILITY:
+- Jeopardy CTF is open to all teams
+- Only pre-University teams (Secondary School, JC, Polytechnic) are eligible for finals and prizes
+- Teams must be Singapore-based
+
+EVENT DETAILS:
+Qualifiers: 16-17 March 2026 (30 hours)
+Finals: 21 March 2026 at SIT
+
+Contact: interpoly@lagncra.sh
