@@ -54,8 +54,8 @@ function IndexPage() {
         { type: 'command', content: 'cat eligibility.txt' },
         { type: 'empty' },
         { type: 'output', content: '• Jeopardy CTF: Open to all teams' },
-        { type: 'output', content: '• Finals & Prizes: Pre-University teams only' },
-        { type: 'output', content: '  (Secondary School, JC, ITE, Polytechnic)' },
+        { type: 'output', content: '• Finals & Prizes: Pre-University teams only (Secondary School, JC, ITE, Polytechnic).' },
+        { type: 'output', content: '• Finals slots are limited to 5 Poly and 5 Non-Poly teams.' },
         { type: 'output', content: '• Location: Teams must be Singapore-based' },
     ]);
 

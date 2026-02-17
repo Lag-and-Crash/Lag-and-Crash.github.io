@@ -11,12 +11,12 @@ function DetailsPage() {
         { type: 'empty' },
         { type: 'output', content: 'Format: 30-hour Online Jeopardy CTF' },
         { type: 'output', content: 'Date: March 16-17, 2026' },
-        { type: 'output', content: 'Time: TBA' },
+        { type: 'output', content: 'Time: 12:00 March 16 - 18:00 March 17' },
         { type: 'empty' },
         { type: 'output', content: 'Categories: Web, Crypto, Reverse Engineering,' },
         { type: 'output', content: 'Forensics, OSINT, PWN, and more!' },
         { type: 'empty' },
-        { type: 'output', content: 'Top 10 teams advance to Finals' },
+        { type: 'output', content: 'Top 5 Polytechnic and top 5 Non-Polytechnic teams advance to finals.' },
     ]);
 
     const finalsTerminalLines = createTerminalLines([
@@ -26,7 +26,6 @@ function DetailsPage() {
         { type: 'output', content: 'Date: March 21, 2026' },
         { type: 'output', content: 'Location: Singapore Institute of Technology (SIT)' },
         { type: 'empty' },
-        { type: 'output', content: 'Only top 10 teams from Qualifiers compete.' },
         { type: 'output', content: 'Bring your A-game for the ultimate showdown!' },
     ]);
 
