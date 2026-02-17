@@ -195,7 +195,7 @@ function DetailsPage() {
                                 
                                 <div className="pt-6">
                                     <a 
-                                        href="https://forms.gle/AP2DmE2f6mqNPJJMA"
+                                        href="https://forms.gle/6N6hvu5ujPp3TvLc9"
                                         className="inline-block group relative"
                                     >
                                         <div className="absolute inset-0 bg-gradient-to-r from-cosmic-blue-mid to-cosmic-red-mid opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg blur-xl" />
