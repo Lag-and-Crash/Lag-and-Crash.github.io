@@ -35,7 +35,7 @@ function DetailsPage() {
         { type: 'empty' },
         { type: 'output', content: '• Jeopardy CTF: Open to all teams' },
         { type: 'output', content: '• Finals & Prizes: Pre-University teams only' },
-        { type: 'output', content: '  (Secondary School, JC, Polytechnic)' },
+        { type: 'output', content: '  (Secondary School, JC, ITE, Polytechnic)' },
         { type: 'output', content: '• Location: Teams must be Singapore-based' },
         { type: 'empty' },
         { type: 'output', content: 'Note: Anyone can participate in the online phase,' },

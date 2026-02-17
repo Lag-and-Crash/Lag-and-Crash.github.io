@@ -1,6 +1,5 @@
 import React from 'react';
-
-const Logo = '/images/logo.svg';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
 
@@ -13,29 +12,29 @@ export default function Header() {
                 About
             </a>
             <a 
-                href="/#sponsors" 
+                href="/#organisers" 
                 className="lg:block hidden flex-1 text-center text-cosmic-text-secondary hover:text-cosmic-blue-light transition-colors duration-300 tracking-wide"
             >
-                Sponsors
+                Organisers
             </a>
-            <a href="/" className="lg:block relative group">
-                <img src={Logo} alt="Lag and Crash" className="px-10 logo cursor-pointer transition-transform duration-300 group-hover:scale-105" />
+            <Link to="/" className="lg:block relative group">
+                <img src="/images/logo.svg" alt="Lag and Crash" className="px-10 logo cursor-pointer transition-transform duration-300 group-hover:scale-105" />
                 <span className="absolute -bottom-2 right-4 text-xs font-bold tracking-wider text-cosmic-blue-light/70">
                     v6.0
                 </span>
-            </a>
+            </Link>
             <a 
                 href="/#contacts" 
                 className="lg:block hidden flex-1 text-center text-cosmic-text-secondary hover:text-cosmic-blue-light transition-colors duration-300 tracking-wide"
             >
                 Contact
             </a>
-            <a 
-                href="/details" 
+            <Link 
+                to="/details" 
                 className="lg:block hidden flex-1 text-center text-cosmic-text-secondary hover:text-cosmic-red-light transition-colors duration-300 tracking-wide"
             >
                 Details
-            </a>
+            </Link>
         </div>
     );
 

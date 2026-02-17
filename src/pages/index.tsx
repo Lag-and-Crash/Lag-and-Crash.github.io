@@ -55,7 +55,7 @@ function IndexPage() {
         { type: 'empty' },
         { type: 'output', content: '• Jeopardy CTF: Open to all teams' },
         { type: 'output', content: '• Finals & Prizes: Pre-University teams only' },
-        { type: 'output', content: '  (Secondary School, JC, Polytechnic)' },
+        { type: 'output', content: '  (Secondary School, JC, ITE, Polytechnic)' },
         { type: 'output', content: '• Location: Teams must be Singapore-based' },
     ]);
 
@@ -214,7 +214,7 @@ function IndexPage() {
                 </div>
 
                 {/* Team Logos */}
-                <div className="max-w-5xl mx-auto px-4 md:px-8 py-16">
+                <div id="organisers" className="max-w-5xl mx-auto px-4 md:px-8 py-16">
                     <div className="bg-cosmic-panel/30 border border-cosmic-blue-light/20 rounded-lg p-8" style={{ boxShadow: '0 0 15px rgba(96, 165, 250, 0.12), inset 0 0 18px rgba(96, 165, 250, 0.04)' }}>
                         <h2 className="text-2xl font-bold text-cosmic-text-primary text-center mb-8 font-mono tracking-wide">
                             Organised by Polytechnic Cybersecurity Interest Groups
