@@ -91,7 +91,7 @@ function App() {
                         {/* Left: Hero Content */}
                         <div className="space-y-8 animate-fadeIn mt-5">
                             {/* Main Headline */}
-                            <h1 
+                            <h1
                                 className="text-4xl md:text-5xl xl:text-6xl font-bold leading-tight tracking-wide"
                                 style={{
                                     background: 'linear-gradient(135deg, #60A5FA 0%, #E5E7EB 100%)',
@@ -111,20 +111,20 @@ function App() {
 
                             {/* Description */}
                             <p className="text-cosmic-text-secondary text-lg md:text-xl leading-relaxed">
-                                Lag and Crash is back for its <span className="text-cosmic-blue-light font-semibold">sixth edition</span>. 
-                                Whether you're new to cybersecurity or an experienced flag hunter, this is your chance to learn, 
+                                Lag and Crash is back for its <span className="text-cosmic-blue-light font-semibold">sixth edition</span>.
+                                Whether you're new to cybersecurity or an experienced flag hunter, this is your chance to learn,
                                 compete, and prove your skills.
                             </p>
 
                             <p className="text-cosmic-text-secondary text-base md:text-lg leading-relaxed">
-                                Join us for a <span className="text-cosmic-text-primary font-semibold">30-hour online Jeopardy CTF</span> (March 16-17), 
+                                Join us for a <span className="text-cosmic-text-primary font-semibold">30-hour online Jeopardy CTF</span> (March 16-17),
                                 with <span className="text-cosmic-red-light font-semibold">top 10 teams</span> advancing to the{' '}
                                 <span className="text-cosmic-red-light font-semibold">King of the Hill</span> finals at SIT on March 21.
                             </p>
 
                             {/* CTA Button */}
                             <div className="pt-4">
-                                <a 
+                                <a
                                     href="https://forms.gle/AP2DmE2f6mqNPJJMA"
                                     className="inline-block group relative"
                                 >
@@ -142,34 +142,34 @@ function App() {
                         <div className="relative lg:block hidden animate-slideUp">
                             <div className="relative">
                                 {/* Blue rim light (left side) */}
-                                <div 
+                                <div
                                     className="absolute -left-8 top-1/4 w-32 h-3/4 opacity-40 blur-3xl"
                                     style={{
                                         background: 'linear-gradient(180deg, rgba(96, 165, 250, 0.4) 0%, transparent 100%)'
                                     }}
                                 />
                                 {/* Red rim light (right side) */}
-                                <div 
+                                <div
                                     className="absolute -right-8 top-1/3 w-32 h-2/3 opacity-40 blur-3xl"
                                     style={{
                                         background: 'linear-gradient(180deg, rgba(248, 113, 113, 0.4) 0%, transparent 100%)'
                                     }}
                                 />
                                 {/* Atmospheric fade at bottom */}
-                                <div 
+                                <div
                                     className="absolute bottom-0 left-0 right-0 h-1/3 opacity-60"
                                     style={{
                                         background: 'linear-gradient(0deg, #05070D 0%, transparent 100%)'
                                     }}
                                 />
-                                <img 
-                                    src="/images/hacker.png" 
-                                    className="relative z-10 w-full h-auto" 
+                                <img
+                                    src="/images/hacker.png"
+                                    className="relative z-10 w-full h-auto"
                                     alt="Hacker silhouette"
-                                    style={{ 
+                                    style={{
                                         transform: 'scale(-1, 1)',
                                         filter: 'drop-shadow(0 0 40px rgba(96, 165, 250, 0.2)) drop-shadow(0 0 60px rgba(248, 113, 113, 0.15))'
-                                    }} 
+                                    }}
                                 />
                             </div>
                         </div>
@@ -178,13 +178,13 @@ function App() {
 
                 {/* About Section */}
                 <div id="about" className="max-w-5xl mx-auto px-4 md:px-8 py-20">
-                    <TerminalBlock 
-                        lines={aboutTerminalLines} 
+                    <TerminalBlock
+                        lines={aboutTerminalLines}
                         className="mb-12"
                         variant="blue"
                     />
 
-                    <TerminalBlock 
+                    <TerminalBlock
                         lines={eligibilityTerminalLines}
                         className="mb-12"
                         variant="red"
@@ -192,8 +192,8 @@ function App() {
 
                     <p className="text-cosmic-text-secondary text-center text-lg">
                         Find out more details on prizes, dates and team formation{' '}
-                        <a 
-                            href="/details" 
+                        <a
+                            href="/details"
                             className="text-cosmic-blue-light hover:text-cosmic-red-light transition-colors duration-300 underline"
                         >
                             here
@@ -208,9 +208,6 @@ function App() {
                             Organised by Polytechnic Cybersecurity Interest Groups
                         </h2>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
-                            <Link href="https://www.instagram.com/tp_cyber/">
-                                <img className="w-32 h-32 object-contain hover:scale-110 transition-transform duration-300" src="/images/logos/TP.png" alt="Temasek Polytechnic" />
-                            </Link>
                             <Link href="https://www.instagram.com/nyp_infosec/">
                                 <img className="w-32 h-28 object-contain hover:scale-110 transition-transform duration-300" src="/images/logos/NYP.png" alt="Nanyang Polytechnic" />
                             </Link>
@@ -219,6 +216,9 @@ function App() {
                             </Link>
                             <Link href="https://www.instagram.com/rp.hextech/">
                                 <img className="w-32 h-32 object-contain hover:scale-110 transition-transform duration-300" src="/images/logos/RP.png" alt="Republic Polytechnic" />
+                            </Link>
+                            <Link href="https://www.instagram.com/rp.hextech/">
+                                <img className="w-32 h-32 object-contain hover:scale-110 transition-transform duration-300" src="/images/logos/SP.png" alt="Singapore Polytechnic" />
                             </Link>
                         </div>
                     </div>
@@ -360,8 +360,8 @@ function App() {
 
                     <p className="text-cosmic-text-muted text-sm">
                         Still not enough CTF action for you? Check out{' '}
-                        <a 
-                            href="https://dsta.gov.sg/brainhack" 
+                        <a
+                            href="https://dsta.gov.sg/brainhack"
                             className="text-cosmic-blue-light hover:text-cosmic-red-light transition-colors duration-300 underline"
                         >
                             DSTA's BrainHacks

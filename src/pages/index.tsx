@@ -21,8 +21,7 @@ const organiserLinks = [
     { href: 'https://www.instagram.com/sp.gryphons/', src: '/images/logos/SP.png', alt: 'Singapore Polytechnic', size: 'w-28 h-28' },
     { href: 'https://www.instagram.com/nyp_infosec/', src: '/images/logos/NYP.png', alt: 'Nanyang Polytechnic', size: 'w-28 h-24' },
     { href: 'https://www.instagram.com/nullsec.sig/', src: '/images/logos/NP.png', alt: 'Ngee Ann Polytechnic', size: 'w-28 h-28' },
-    { href: 'https://www.instagram.com/rp.hextech/', src: '/images/logos/RP.png', alt: 'Republic Polytechnic', size: 'w-28 h-28' },
-    { href: 'https://www.instagram.com/tp_cyber/', src: '/images/logos/TP.png', alt: 'Temasek Polytechnic', size: 'w-28 h-28' },
+    { href: 'https://www.instagram.com/rp.hextech/', src: '/images/logos/RP.png', alt: 'Republic Polytechnic', size: 'w-28 h-28' }
 ];
 
 const socialLinks = [
