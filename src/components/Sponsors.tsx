@@ -49,6 +49,7 @@ const tiers: Tier[] = [
         borderClass: 'border-cosmic-text-muted/15',
         sponsors: [
             { name: 'AISP', src: '/images/sponsors/AISP/AiSP.png', href: 'https://www.aisp.sg/', imgClass: 'w-[180px] h-[120px] object-contain' },
+            { name: 'YBN', src: '/images/sponsors/YBN/YBN.png', href: 'https://www.yes-but-no.org/', imgClass: 'w-[180px] h-[120px] object-contain' }
         ],
     },
 ];
