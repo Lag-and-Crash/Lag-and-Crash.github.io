@@ -17,22 +17,12 @@ interface Tier {
 
 const tiers: Tier[] = [
     {
-        label: 'PLATINUM',
-        colorClass: 'text-cosmic-blue-light',
-        borderClass: 'border-cosmic-blue-light/30',
-        glowStyle: { boxShadow: '0 0 20px rgba(96,165,250,0.15), inset 0 0 20px rgba(96,165,250,0.05)' },
-        sponsors: [
-            { name: 'CSIT', src: '/images/sponsors/CSIT/CSIT.png', href: 'https://www.csit.gov.sg/', imgClass: 'w-[280px] h-[180px] object-contain' },
-        ],
-    },
-    {
         label: 'GOLD',
         colorClass: 'text-yellow-400/80',
         borderClass: 'border-yellow-500/20',
         glowStyle: { boxShadow: '0 0 12px rgba(234,179,8,0.08)' },
         sponsors: [
             { name: 'DSTA', src: '/images/sponsors/DSTA/DSTA.png', href: 'https://www.dsta.gov.sg/', imgClass: 'w-[240px] h-[160px] object-contain' },
-            { name: 'DIS', src: '/images/sponsors/DIS/DIS.png', href: 'https://www.dis.gov.sg/', imgClass: 'w-[240px] h-[160px] object-contain' },
         ],
     },
     {
@@ -40,15 +30,8 @@ const tiers: Tier[] = [
         colorClass: 'text-zinc-400',
         borderClass: 'border-zinc-500/20',
         sponsors: [
+            { name: 'CSIT', src: '/images/sponsors/CSIT/CSIT.png', href: 'https://www.csit.gov.sg/', imgClass: 'w-[220px] h-[140px] object-contain' },
             { name: 'CSA', src: '/images/sponsors/CSA/CSA.png', href: 'https://www.csa.gov.sg/', imgClass: 'w-[220px] h-[140px] object-contain' },
-        ],
-    },
-    {
-        label: 'SUPPORTING ASSOCIATION',
-        colorClass: 'text-cosmic-text-muted',
-        borderClass: 'border-cosmic-text-muted/20',
-        sponsors: [
-            { name: 'AISP', src: '/images/sponsors/AISP/AiSP.png', href: 'https://www.aisp.sg/', imgClass: 'w-[220px] h-[140px] object-contain' },
         ],
     },
     {
@@ -65,8 +48,7 @@ const tiers: Tier[] = [
         colorClass: 'text-cosmic-text-muted',
         borderClass: 'border-cosmic-text-muted/15',
         sponsors: [
-            { name: 'CYS', src: '/images/sponsors/CYS/CYS.png', href: 'https://www.cyberyouth.sg/', imgClass: 'w-[180px] h-[120px] object-contain' },
-            { name: 'OffSec', src: '/images/sponsors/OffSec/OffSec.png', href: 'https://www.offsec.com/', imgClass: 'w-[180px] h-[120px] object-contain' },
+            { name: 'AISP', src: '/images/sponsors/AISP/AiSP.png', href: 'https://www.aisp.sg/', imgClass: 'w-[180px] h-[120px] object-contain' },
         ],
     },
 ];
