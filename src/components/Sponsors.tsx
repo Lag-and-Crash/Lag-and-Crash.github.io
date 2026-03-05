@@ -49,6 +49,7 @@ const tiers: Tier[] = [
         borderClass: 'border-cosmic-text-muted/15',
         sponsors: [
             { name: 'YBN', src: '/images/sponsors/YBN/YBN.png', href: 'https://www.yes-but-no.org/', imgClass: 'w-[180px] h-[120px] object-contain' },
+            { name: 'Async', src: 'https://ybnctf.ybn.sg/Async.png', href: 'https://async.sg/', imgClass: 'w-[180px] h-[120px] object-contain' },
         ],
     },
 ];
