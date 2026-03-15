@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import TerminalBlock, { createTerminalLines } from '../components/TerminalBlock';
@@ -114,6 +115,13 @@ function DetailsPage() {
 
                 {/* Page Header */}
                 <div className="max-w-5xl mx-auto px-4 md:px-8 pt-32 pb-12">
+                    <Link
+                        to="/"
+                        className="inline-flex items-center gap-2 text-cosmic-text-muted hover:text-cosmic-blue-light transition-colors duration-300 text-sm font-mono mb-8 group"
+                    >
+                        <span className="group-hover:-translate-x-1 transition-transform duration-300 inline-block">←</span>
+                        Back to Home
+                    </Link>
                     <h1 
                         className="text-4xl md:text-5xl font-bold text-center mb-4 tracking-wide"
                         style={{
@@ -193,15 +201,18 @@ function DetailsPage() {
                                 </p>
                                 
                                 <div className="pt-6">
-                                    <a 
+                                    <a
                                         href="https://forms.gle/6N6hvu5ujPp3TvLc9"
-                                        className="inline-block group relative"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="group relative inline-block"
                                     >
-                                        <div className="absolute inset-0 bg-gradient-to-r from-cosmic-blue-mid to-cosmic-red-mid opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg blur-xl" />
-                                        <div className="relative bg-cosmic-panel border-l-2 border-cosmic-blue-light border-r-2 border-cosmic-red-light px-10 py-5 rounded-lg transition-all duration-300">
-                                            <span className="text-cosmic-text-primary font-bold text-xl tracking-wide">
-                                                Register Now!
-                                            </span>
+                                        <div className="absolute inset-0 bg-cosmic-blue-mid opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500 rounded-lg" />
+                                        <div
+                                            className="relative px-10 py-5 border-2 border-cosmic-blue-light rounded-lg font-bold text-cosmic-blue-light text-xl tracking-wide transition-all duration-300 group-hover:text-white"
+                                            style={{ background: 'rgba(96,165,250,0.1)' }}
+                                        >
+                                            Register Now
                                         </div>
                                     </a>
                                 </div>
