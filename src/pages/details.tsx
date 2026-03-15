@@ -23,8 +23,8 @@ function DetailsPage() {
         { type: 'command', content: 'cat finals.txt' },
         { type: 'empty' },
         { type: 'output', content: 'Format: King of the Hill (Physical)' },
-        { type: 'output', content: 'Date: March 21, 2026' },
-        { type: 'output', content: 'Location: Singapore Institute of Technology (SIT)' },
+        { type: 'output', content: 'Date: March 20, 2026' },
+        { type: 'output', content: 'Location: To be released to finalists.' },
         { type: 'empty' },
         { type: 'output', content: 'Bring your A-game for the ultimate showdown!' },
     ]);

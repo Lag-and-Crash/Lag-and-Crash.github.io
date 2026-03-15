@@ -129,7 +129,7 @@ function IndexPage() {
                             <p className="text-cosmic-text-secondary text-sm md:text-base leading-relaxed">
                                 Join us for a <span className="text-cosmic-text-primary font-semibold">30-hour online Jeopardy CTF</span> (March 16-17), 
                                 with <span className="text-cosmic-red-light font-semibold">top 10 teams</span> advancing to the{' '}
-                                <span className="text-cosmic-red-light font-semibold">King of the Hill</span> finals at SIT on March 21.
+                                <span className="text-cosmic-red-light font-semibold">King of the Hill</span> finals on March 20.
                             </p>
 
                             {/* CTA Button */}
