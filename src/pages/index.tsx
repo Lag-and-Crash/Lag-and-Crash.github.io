@@ -63,7 +63,7 @@ export default function IndexPage() {
         <div className="w-full min-h-screen bg-cosmic-base">
             <Helmet>
                 <title>Lag and Crash 6.0</title>
-                <meta name="description" content="Singapore's inter-polytechnic cybersecurity CTF — qualifiers March 16–17, finals March 21, 2026." />
+                <meta name="description" content="Singapore's inter-polytechnic cybersecurity CTF — qualifiers March 16–17, finals March 20, 2026." />
                 <link rel="icon" type="image/x-icon" href="/logo.png" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -126,7 +126,7 @@ export default function IndexPage() {
                             {/* Sub-copy */}
                             <p className="hero-reveal-2 text-cosmic-text-secondary text-lg leading-relaxed max-w-lg">
                                 Singapore's premier inter-polytechnic cybersecurity competition.
-                                30-hour Jeopardy qualifiers online — King of the Hill finals at SIT.
+                                30-hour Jeopardy qualifiers online — King of the Hill finals.
                             </p>
 
                             {/* Date badges */}
@@ -141,7 +141,7 @@ export default function IndexPage() {
                                     className="font-mono text-sm px-4 py-2 rounded border border-cosmic-red-light/40 text-cosmic-red-light"
                                     style={{ background: 'rgba(248,113,113,0.06)' }}
                                 >
-                                    👑 Mar 21 · Finals @ SIT
+                                    👑 Mar 20 · Finals
                                 </span>
                             </div>
 

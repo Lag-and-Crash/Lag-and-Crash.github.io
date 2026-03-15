@@ -59,12 +59,11 @@ function DetailsPage() {
         { type: 'empty' },
         { type: 'output', content: 'Prizes for Pre-University teams (Finals):' },
         { type: 'empty' },
-        { type: 'output', content: '🥇 1st Place: TBA' },
-        { type: 'output', content: '🥈 2nd Place: TBA' },
-        { type: 'output', content: '🥉 3rd Place: TBA' },
+        { type: 'output', content: '🥇 1st Place: $450 + 5x ASYNC Security Labs W200 (Intro to AD pentesting)' },
+        { type: 'output', content: '🥈 2nd Place: $200 + Merch' },
+        { type: 'output', content: '🥉 3rd Place: $100 + Merch' },
         { type: 'empty' },
         { type: 'output', content: 'Additional prizes and swag for participants!' },
-        { type: 'output', content: 'Details will be announced soon.' },
     ]);
 
     const questionsTerminalLines = createTerminalLines([

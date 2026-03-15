@@ -31,8 +31,8 @@ const events: TimelineEvent[] = [
     },
     {
         label: 'Finals',
-        date: 'Mar 21, 2026',
-        description: 'King of the Hill at SIT. Pre-University teams battle for prizes in-person.',
+        date: 'Mar 20, 2026',
+        description: 'King of the Hill finals. Pre-University teams battle for prizes in-person.',
         icon: '👑',
         dotClass: 'border-cosmic-red-light bg-cosmic-red-deep/30',
         cardClass: 'border-cosmic-red-light/30 bg-cosmic-panel/50',
