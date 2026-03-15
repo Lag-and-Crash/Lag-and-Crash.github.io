@@ -193,28 +193,25 @@ function DetailsPage() {
                                 Registration
                             </h2>
                             
-                            <div className="bg-cosmic-panel/40 border border-cosmic-blue-light/25 rounded-lg p-8 text-center" style={{ boxShadow: '0 0 15px rgba(96, 165, 250, 0.12), inset 0 0 18px rgba(96, 165, 250, 0.04)' }}>
+                            <div className="bg-cosmic-panel/40 border border-cosmic-red-light/25 rounded-lg p-8 text-center" style={{ boxShadow: '0 0 15px rgba(248, 113, 113, 0.12), inset 0 0 18px rgba(248, 113, 113, 0.04)' }}>
                                 <p className="text-cosmic-text-primary text-xl md:text-2xl font-semibold mb-4">
-                                    Registration closes:{' '}
+                                    Registration closed on{' '}
                                     <span className="text-cosmic-red-light">March 12, 2026</span>
                                 </p>
                                 
                                 <div className="pt-6">
-                                    <a
-                                        href="https://forms.gle/6N6hvu5ujPp3TvLc9"
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        className="group relative inline-block"
-                                    >
-                                        <div className="absolute inset-0 bg-cosmic-blue-mid opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500 rounded-lg" />
+                                    <div className="relative inline-block">
                                         <div
-                                            className="relative px-10 py-5 border-2 border-cosmic-blue-light rounded-lg font-bold text-cosmic-blue-light text-xl tracking-wide transition-all duration-300 group-hover:text-white"
-                                            style={{ background: 'rgba(96,165,250,0.1)' }}
+                                            className="relative px-10 py-5 border-2 border-cosmic-red-light/60 rounded-lg font-bold text-cosmic-red-light text-xl tracking-wide cursor-not-allowed opacity-75"
+                                            style={{ background: 'rgba(248,113,113,0.1)' }}
                                         >
-                                            Register Now
+                                            Registration Closed
                                         </div>
-                                    </a>
+                                    </div>
                                 </div>
+                                <p className="text-cosmic-text-secondary text-sm mt-6">
+                                    Qualifiers start March 16 · Finals on March 20
+                                </p>
                             </div>
                         </div>
                     </section>

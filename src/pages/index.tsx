@@ -8,8 +8,6 @@ import Sponsors from '../components/Sponsors';
 import FAQ from '../components/FAQ';
 import '../styles/nebula.css';
 
-const REGISTER_URL = 'https://forms.gle/6N6hvu5ujPp3TvLc9';
-
 const stats = [
     { value: '30 hrs', label: 'Qualifier duration' },
     { value: 'Jeopardy + KotH', label: 'Competition formats' },
@@ -147,21 +145,15 @@ export default function IndexPage() {
 
                             {/* CTAs */}
                             <div className="hero-reveal-4 flex flex-wrap gap-4 pt-2">
-                                {/* Primary */}
-                                <a
-                                    href={REGISTER_URL}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="group relative inline-block"
-                                >
-                                    <div className="absolute inset-0 bg-cosmic-blue-mid opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500 rounded-lg" />
+                                {/* Registration Closed */}
+                                <div className="relative inline-block">
                                     <div
-                                        className="relative px-8 py-4 border-2 border-cosmic-blue-light rounded-lg font-bold text-cosmic-blue-light text-lg tracking-wide transition-all duration-300 group-hover:text-white"
-                                        style={{ background: 'rgba(96,165,250,0.1)' }}
+                                        className="relative px-8 py-4 border-2 border-cosmic-red-light/60 rounded-lg font-bold text-cosmic-red-light text-lg tracking-wide cursor-not-allowed opacity-75"
+                                        style={{ background: 'rgba(248,113,113,0.1)' }}
                                     >
-                                        Register Now
+                                        Registration Closed
                                     </div>
-                                </a>
+                                </div>
                                 {/* Secondary */}
                                 <Link
                                     to="/details"

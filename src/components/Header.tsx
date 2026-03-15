@@ -57,14 +57,11 @@ export default function Header() {
                     >
                         Details
                     </Link>
-                    <a
-                        href="https://forms.gle/6N6hvu5ujPp3TvLc9"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="ml-2 px-4 py-2 border border-cosmic-blue-light/50 text-cosmic-blue-light text-sm font-mono rounded hover:bg-cosmic-blue-light/10 hover:border-cosmic-blue-light transition-all duration-300"
+                    <div
+                        className="ml-2 px-4 py-2 border border-cosmic-red-light/40 text-cosmic-red-light/60 text-sm font-mono rounded cursor-not-allowed opacity-60"
                     >
-                        Register →
-                    </a>
+                        Closed
+                    </div>
                 </nav>
 
                 {/* Hamburger (mobile) */}
@@ -107,15 +104,11 @@ export default function Header() {
                     >
                         Details
                     </Link>
-                    <a
-                        href="https://forms.gle/6N6hvu5ujPp3TvLc9"
-                        target="_blank"
-                        rel="noreferrer"
-                        onClick={close}
-                        className="mt-3 mb-4 py-3 px-4 border border-cosmic-blue-light/50 text-cosmic-blue-light font-mono text-sm rounded text-center hover:bg-cosmic-blue-light/10 transition-all duration-300"
+                    <div
+                        className="mt-3 mb-4 py-3 px-4 border border-cosmic-red-light/40 text-cosmic-red-light/60 font-mono text-sm rounded text-center cursor-not-allowed opacity-60"
                     >
-                        Register →
-                    </a>
+                        Registration Closed
+                    </div>
                 </nav>
             </div>
         </header>
